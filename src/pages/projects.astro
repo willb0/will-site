@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import Projects from "@content/projects.json";
+import { projects } from "@content/projects";
 ---
 
 <Layout title="Projects - Lance Ross" description="Here are all my projects from my GitHub account.">
@@ -13,7 +13,7 @@ import Projects from "@content/projects.json";
     </p>
     <section class="grid mb-5">
       {
-        Projects.map((project) => (
+        projects.map((project) => (
           <ProjectCard
             title={project.title}
             description={project.description}

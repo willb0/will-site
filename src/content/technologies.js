@@ -1,4 +1,4 @@
-[
+export const technologies = [
   {
     "logo": "vscode-icons:file-type-astro",
     "text": "Astro"
@@ -8,8 +8,8 @@
     "text": "JavaScript"
   },
   {
-    "logo": "logos:python",
-    "text": "Python"
+    "logo": "logos:typescript-icon",
+    "text": "TypeScript"
   },
   {
     "logo": "logos:tailwindcss-icon",
@@ -20,7 +20,7 @@
     "text": "Firebase"
   },
   {
-    "logo":"logos:nodejs-icon",
-    "text":"Node.js"
+    "logo":"logos:svelte-icon",
+    "text":"Svelte"
   }
 ]
