@@ -34,16 +34,18 @@ const canonicalURL = new URL(Astro.url).href;
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content="Lance Ross" />
-    <script defer>
-      function openNav() {
+    <script>
+      const open = document.querySelector(".open");
+      const close = document.querySelector(".close");
+      open.addEventListener("click", function () {
         document.querySelector(".navbar").classList.replace("w-0", "w-screen");
         document.querySelector("body").classList.replace("overflow-auto", "overflow-y-hidden");
-      }
+      });
 
-      function closeNav() {
+      close.addEventListener("click", function () {
         document.querySelector(".navbar").classList.replace("w-screen", "w-0");
         document.querySelector("body").classList.replace("overflow-y-hidden", "overflow-auto");
-      }
+      });
     </script>
     <script is:inline>
       const primaryColorScheme = "none";
