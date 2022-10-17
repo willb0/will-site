@@ -16,8 +16,8 @@ export const technologies = [
     "text": "TailwindCSS"
   },
   {
-    "logo": "logos:firebase",
-    "text": "Firebase"
+    "logo": "logos:vitejs",
+    "text": "Vite"
   },
   {
     "logo":"logos:svelte-icon",

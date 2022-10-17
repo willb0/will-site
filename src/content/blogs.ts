@@ -4,5 +4,5 @@ export const blogs = [
     "description": "I am going to share my experience of using Astro for a month.",
     "pubDate": "Oct 2 2022",
     "url": "/blog/my-experience-with-astro"
-  },
+  }
 ]

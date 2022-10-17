@@ -12,5 +12,5 @@ export const projects = [
     "githubUrl": "https://github.com/lancerossdev/lanceross-xyz",
     "description": "Personal website made with Astro",
     "technologies": ["Astro", "Tailwind CSS"]
-  },
+  }
 ]

@@ -6,7 +6,7 @@ image: "/images/astro-logo.webp"
 author: "Lance Ross"
 date: "October 02 2022"
 ---
-![Astro with Tailwind CSS Logo](/images/astro-logo.webp)
+![Astro Framework Logo](/images/astro-logo.webp)
 
 Hello! This is going to be my very first blog on my website. Today, I'm going to share with you my experience with Astro and its community.
 
