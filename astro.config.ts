@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import compress from "astro-compress";
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,5 +20,5 @@ export default defineConfig({
     img: true,
     svg: true,
     webp: true,
-  }), tailwind(), sitemap()],
+  }), tailwind(), sitemap(), mdx()],
 });
