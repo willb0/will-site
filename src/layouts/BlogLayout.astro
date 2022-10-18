@@ -21,7 +21,7 @@ const canonicalURL = new URL(Astro.url).href;
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:description" content={frontmatter.description} />
     <meta property="og:image" content={frontmatter.image} />
-    <meta property="og:image:alt" content="Context of the blog" />
+    <meta property="og:image:alt" content={frontmatter.imageAlt} />
     <meta property="og:site_name" content="Lance Ross" />
     <meta property="og:locale" content="en_US" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -33,7 +33,7 @@ const canonicalURL = new URL(Astro.url).href;
     <meta property="twitter:image" content={frontmatter.image} />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
-    <meta name="author" content="Lance Ross" />
+    <meta name="author" content={frontmatter.author} />
     <script>
       const open = document.querySelector(".open");
       const close = document.querySelector(".close");
