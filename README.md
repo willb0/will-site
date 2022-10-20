@@ -1,11 +1,10 @@
-# lanceross.xyz 🌎
+# lanceross.xyz 🚀
 
 Hello, this is the source code my new personal website. You can visit it here on [lanceross.xyz](https://lanceross.xyz).
 This website is made with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com) for the Front-end and is hosted using [Vercel](https://vercel.com).
 I will try to update this every time I uploaded something like on blogs and projects page or when I encountered an issue I forgot to fix.
 
-You can email me with my email address on my GitHub Profile or [create an Issue](https://github.com/lancerossdev/lanceross-xyz/issues/new) if you think there's something wrong or you want to add something with my website. I will appreciate your help!
-
+You can [create an Issue](https://github.com/lancerossdev/lanceross.xyz/issues/new) if you think there's something wrong or you want to add something with my website. I will appreciate your help!
 
 ![Preview of the Website](https://user-images.githubusercontent.com/102563271/195970816-4b8742dd-9771-49e8-8d4a-517a79e1b8b1.png)
 
@@ -23,4 +22,4 @@ You can use `npm i` or `pnpm i` to install dependencies. I personally use `yarn`
 
 ## License ⚖️
 
-This repository has [MIT License](https://github.com/lancerossdev/lanceross-xyz/blob/master/LICENSE).
+This repository has [MIT License](https://github.com/lancerossdev/lanceross.xyz/blob/master/LICENSE).

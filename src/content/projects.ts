@@ -7,10 +7,10 @@ export const projects = [
     "technologies": ["Astro", "Tailwind CSS", "MDX"]
   },
   {
-    "title": "lanceross-xyz",
+    "title": "lanceross.xyz",
     "projectUrl": "https://lanceross.xyz/",
-    "githubUrl": "https://github.com/lancerossdev/lanceross-xyz",
+    "githubUrl": "https://github.com/lancerossdev/lanceross.xyz",
     "description": "Personal website made with Astro",
-    "technologies": ["Astro", "Tailwind CSS"]
+    "technologies": ["Astro", "Tailwind CSS", "MDX"]
   }
 ]
