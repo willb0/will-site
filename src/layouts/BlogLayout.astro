@@ -2,7 +2,8 @@
 import Header from "@components/Header.astro";
 import "@fontsource/lexend-deca";
 const { frontmatter } = Astro.props;
-
+const { content, url } = Astro.props;
+const ogImage = url.replace("blog", "images")+ ".png";
 const canonicalURL = new URL(Astro.url).href;
 ---
 
@@ -11,7 +12,7 @@ const canonicalURL = new URL(Astro.url).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <title>{frontmatter.title}</title>
     <link rel="canonical" href={canonicalURL} />
     <meta name="title" content={frontmatter.title} />
@@ -20,8 +21,7 @@ const canonicalURL = new URL(Astro.url).href;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:description" content={frontmatter.description} />
-    <meta property="og:image" content={frontmatter.image} />
-    <meta property="og:image:alt" content={frontmatter.imageAlt} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="Lance Ross" />
     <meta property="og:locale" content="en_US" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -30,7 +30,7 @@ const canonicalURL = new URL(Astro.url).href;
     <meta name="twitter:creator" content="@lancerossdev" />
     <meta property="twitter:title" content={frontmatter.title} />
     <meta property="twitter:description" content={frontmatter.description} />
-    <meta property="twitter:image" content={frontmatter.image} />
+    <meta property="twitter:image" content={ogImage} />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content={frontmatter.author} />
@@ -86,12 +86,14 @@ const canonicalURL = new URL(Astro.url).href;
     <Header />
     <main class="m-auto p-6 max-w-4xl md:p-10 md:px-20">
       <div class="grid place-items-center text-center">
-        <span class="!text-xl dark:text-zinc-300 mb-5">{frontmatter.date}</span>
+        <span class="!text-xl dark:text-zinc-300 mb-5">{frontmatter.pubDate}</span>
         <h1 class="m-0 !text-4xl mb-7 dark:text-white">{frontmatter.title}</h1>
         <h2 class="m-0 !text-xl mb-7 dark:text-zinc-300">Written by {frontmatter.author}</h2>
       </div>
       <section class="dark:text-zinc-200 prose-a:dark:text-blue-400 prose-a:text-blue-600 prose-xl !text-[1.18rem] prose-img:rounded-xl">
-        <slot />
+        <article>
+          <slot />
+        </article>
       </section>
       <br><a href="/blog" class="dark:text-blue-400 text-blue-600">Go back to posts</a>
     </main>
