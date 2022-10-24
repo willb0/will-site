@@ -1,5 +1,5 @@
-// credits to kevinzunigacuellar on github
-// also idk why this does not work on dev server
+// credits to kevinzunigacuellar on github for the idea and code
+// important: idk why dev server doesn't work because of this
 import type { APIContext } from "astro";
 import fs from "fs/promises";
 import satori from "satori";
@@ -16,12 +16,12 @@ export async function get({ params }: APIContext) {
   const { title, description, pubDate } = pages[q].frontmatter;
   const date = new Date(pubDate).toLocaleDateString("en", { dateStyle: "long" });
   const markup = html` <div style="color: #111827; width: 1200px; height: 630px; display: flex; flex-direction: column;">
-    <div style="width: 100%; background-color: white; height: 80%; display:flex; justify-content: center; padding: 0px 50px; flex-direction: column;">
-      <div style="color: #6b7280; font-size: 24px; line-height: 24px; padding-bottom: 20px;">${date}</div>
-      <div style="font-size: 52px; font-weight: 600; color: #111827; padding-bottom: 30px;">${title}</div>
-      <div style="color: #6b7280; font-size: 30px; line-height: 42px;">${description}</div>
+    <div style="width: 100%; background-color: #18141c; height: 80%; display:flex; justify-content: center; padding: 0px 50px; flex-direction: column;">
+      <div style="color: #cbd5e1; font-size: 24px; line-height: 24px; padding-bottom: 20px;">${date}</div>
+      <div style="font-size: 52px; font-weight: 600; color: white; padding-bottom: 30px;">${title}</div>
+      <div style="color: #cbd5e1; font-size: 30px; line-height: 42px;">${description}</div>
     </div>
-    <div style="background-color: #393E41; width: 100%; height: 20%; display: flex; align-items: center; justify-content: space-between; padding: 0px 50px; border-top: 2px solid #bfdbfe;">
+    <div style="background-color: #201c24; width: 100%; height: 20%; display: flex; align-items: center; justify-content: space-between; padding: 0px 50px;">
       <div style="font-size: 30px; color: white; font-weight: 600;">lanceross.xyz</div>
       <div style="font-size: 30px; color: white; font-weight: 600;">Lance Ross (lancerossdev)</div>
     </div>

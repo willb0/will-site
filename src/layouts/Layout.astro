@@ -11,8 +11,8 @@ export interface Props {
 
 const defaultMeta = {
   title: "Lance Ross",
-  description: "A student web dev in Philippines.",
-  image: "/static/banner.jpeg",
+  description: "I'm a student web dev and a JAMStack enjoyer.",
+  image: "/assets/banner.png",
   imageAlt: "A Picture of Lance Ross with a Face Mask",
 };
 
@@ -27,7 +27,7 @@ const canonicalURL = new URL(Astro.url).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <link rel="canonical" href={canonicalURL} />
     <meta name="title" content={title} />
@@ -50,7 +50,6 @@ const canonicalURL = new URL(Astro.url).href;
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content="Lance Ross" />
-    <meta name="theme-color" data-react-helmet="true" content="#5ad2f4" />
     <script>
       const open = document.querySelector(".open");
       const close = document.querySelector(".close");

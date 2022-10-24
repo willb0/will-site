@@ -8,6 +8,12 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://lanceross.xyz',
   base: '/',
+  markdown: {
+    shikiConfig: {
+      theme: "one-dark-pro",
+      wrap: true,
+    },
+  },
   vite: {
     ssr: {
       external: ["svgo"]

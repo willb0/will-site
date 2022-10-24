@@ -20,7 +20,7 @@ export const technologies = [
     "text": "Vite"
   },
   {
-    "logo":"logos:svelte-icon",
-    "text":"Svelte"
+    "logo":"logos:vue",
+    "text":"Vue"
   }
 ]
