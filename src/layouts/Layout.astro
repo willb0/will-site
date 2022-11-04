@@ -12,13 +12,11 @@ export interface Props {
 const defaultMeta = {
   title: "Lance Ross",
   description: "I'm a student web dev and a JAMStack enjoyer.",
-  image: "/assets/banner.png",
+  image: "/assets/default-og-image.png",
   imageAlt: "A Picture of Lance Ross with a Face Mask",
 };
 
 const { title = defaultMeta.title, description = defaultMeta.description, heroImage = defaultMeta.image, imageAlt = defaultMeta.imageAlt } = Astro.props as Props;
-
-const ImageURL = new URL(heroImage, Astro.site);
 const canonicalURL = new URL(Astro.url).href;
 ---
 
@@ -36,7 +34,7 @@ const canonicalURL = new URL(Astro.url).href;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ImageURL} />
+    <meta property="og:image" content={heroImage} />
     <meta property="og:image:alt" content={imageAlt} />
     <meta property="og:site_name" content="Lance Ross" />
     <meta property="og:locale" content="en_US" />
@@ -46,7 +44,7 @@ const canonicalURL = new URL(Astro.url).href;
     <meta name="twitter:creator" content="@lancerossdev" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ImageURL} />
+    <meta property="twitter:image" content={heroImage} />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content="Lance Ross" />

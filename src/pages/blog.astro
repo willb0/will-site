@@ -12,15 +12,6 @@ import { blogs } from "@content/blogs";
     </p><br />
   </section>
   <section>
-    {
-      blogs.map((blog) => (
-        <BlogCard
-          title={blog.title}
-          description={blog.description}
-          pubDate={blog.pubDate}
-          url={blog.url}
-        />
-      ))
-    }
+    {blogs.map((blog) => <BlogCard title={blog.title} description={blog.description} pubDate={blog.pubDate} url={blog.url} />)}
   </section>
 </Layout>

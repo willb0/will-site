@@ -13,7 +13,7 @@ export const technologies = [
   },
   {
     "logo": "logos:tailwindcss-icon",
-    "text": "TailwindCSS"
+    "text": "Tailwind"
   },
   {
     "logo": "logos:vitejs",
