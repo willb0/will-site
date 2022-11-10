@@ -22,5 +22,13 @@ export const technologies = [
   {
     "logo":"logos:vue",
     "text":"Vue"
+  },
+  {
+    "logo": "logos:preact",
+    "text": "Preact"
+  },
+  {
+    "logo": "logos:solidjs-icon",
+    "text": "Solid"
   }
 ]

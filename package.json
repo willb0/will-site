@@ -9,10 +9,11 @@
     "astro": "astro"
   },
   "devDependencies": {
+    "@astrojs/image": "^0.11.2",
     "@astrojs/mdx": "^0.11.4",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^2.0.2",
-    "@fontsource/lexend-deca": "^4.5.11",
+    "@fontsource/inter": "^4.5.14",
     "@tailwindcss/typography": "^0.5.7",
     "astro": "^1.5.0",
     "astro-compress": "1.0.8",
