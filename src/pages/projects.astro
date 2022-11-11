@@ -4,14 +4,13 @@ import ProjectCard from "@components/ProjectCard.astro";
 import { projects } from "@content/projects";
 ---
 
-<Layout title="Projects - Lance Ross" description="Here are all my projects from my GitHub account.">
+<Layout title="Projects - Lance Ross" description="Here are all my small projects from my GitHub.">
   <section>
-    <h1 class="text-4xl mb-6">My Projects 📚</h1>
+    <h1 class="text-4xl mb-6 dark:text-white">My Projects</h1>
     <p class="dark:text-zinc-300 mb-5">
-      These are all projects that I own and contribute to during my free time. Each project have a link on their repositories so you can visit the project on your browser. You can check all my
-      projects in <a href="https://github.com/lancerossdev?tab=repositories" target="_blank" rel="noopener nofollow" class="text-blue-600 dark:text-blue-400">GitHub</a>.
+      These are all projects that I own and contribute to during my free time. Each project have a link on their repositories and a demo link so you can visit the project on your browser if I deployed it to the internet.
     </p>
-    <section class="grid mb-5">
+    <section class="grid sm:grid-cols-2 gap-5 mb-5">
       {
         projects.map((project) => (
           <ProjectCard title={project.title} description={project.description} projectUrl={project.projectUrl} githubUrl={project.githubUrl} technologies={project.technologies} />

@@ -6,6 +6,8 @@ ogimage: "/assets/my-new-astro-template.png"
 author: "Lance Ross"
 pubDate: "October 17, 2022"
 ---
+import BlogImage from "@components/BlogImage.astro"
+import BasicBlog from "@images/basicblog.png"
 
 Hey there! It’s been many weeks since my latest blog post. I’ve been busy with work and other projects. I just want to share the blog template that I created using Astro and Tailwind CSS!
 
@@ -14,7 +16,7 @@ Hey there! It’s been many weeks since my latest blog post. I’ve been busy wi
 So, I got bored and I decided to create a blog template using Astro and Tailwind CSS. I've been using Astro for a while now and I like it, so I decided to create this blog template so I can contribute more to Astro Community! I also used Tailwind CSS because I like it and it's easy to use.
 
 Here is a quick preview of the template:
-![Website Preview](/static/website-preview.webp)
+<BlogImage src={BasicBlog} alt="Basic Blog Preview" />
 
 Looks simple but cool, isn't it? You can find the demo here at [basicblog.lanceross.xyz](https://basicblog.lanceross.xyz) and if you want to take a look at the GitHub repository, you can find it here on my [GitHub](https://github.com/lancerossdev/astro-basic-blog).
 

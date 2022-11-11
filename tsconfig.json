@@ -2,12 +2,13 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
-    "types": ["astro/client"],
+    "types": ["@astrojs/image/client"],
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@content/*": ["src/content/*"]
+      "@content/*": ["src/content/*"],
+      "@images/*": ["src/images/*"]
     }
   }
 }

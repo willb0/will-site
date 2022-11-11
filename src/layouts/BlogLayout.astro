@@ -1,8 +1,15 @@
 ---
 import Header from "@components/Header.astro";
-import "@fontsource/lexend-deca";
+import "@fontsource/inter";
+
+let { pubDate } = Astro.props.content;
 const { frontmatter } = Astro.props;
 const canonicalURL = new URL(Astro.url).href;
+
+const thisDate = new Date(pubDate).toLocaleDateString("en", {
+  dateStyle: "long",
+});
+pubDate = pubDate.split("T")[0];
 ---
 
 <!DOCTYPE html>
@@ -32,19 +39,6 @@ const canonicalURL = new URL(Astro.url).href;
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content={frontmatter.author} />
-    <script>
-      const open = document.querySelector(".open");
-      const close = document.querySelector(".close");
-      open.addEventListener("click", function () {
-        document.querySelector(".navbar").classList.replace("w-0", "w-screen");
-        document.querySelector("body").classList.replace("overflow-auto", "overflow-y-hidden");
-      });
-
-      close.addEventListener("click", function () {
-        document.querySelector(".navbar").classList.replace("w-screen", "w-0");
-        document.querySelector("body").classList.replace("overflow-y-hidden", "overflow-auto");
-      });
-    </script>
     <script is:inline>
       const primaryColorScheme = "none";
       const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -79,25 +73,29 @@ const canonicalURL = new URL(Astro.url).href;
     </script>
   </head>
   <body
-    class="transition scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-[#454b5f] dark:scrollbar-track-[#1d1f2a] dark:bg-[#101218] dark:text-white font-lexend-deca selection:bg-[#3d94ff42] min-h-screen flex flex-col sm:text-xl overflow-auto"
+    class="transition scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-slate-300 dark:scrollbar-thumb-[#454b5f] dark:scrollbar-track-[#1d1f2a] dark:bg-[#101218] dark:text-white font-inter selection:bg-[#3d94ff42] min-h-screen flex flex-col sm:text-xl overflow-auto"
   >
     <Header />
     <main class="m-auto p-6 max-w-4xl md:p-10 md:px-20">
-      <div class="grid place-items-center text-center">
-        <span class="!text-xl dark:text-zinc-300 mb-5">{frontmatter.pubDate}</span>
+      <header class="mb-5">
         <h1 class="m-0 !text-4xl mb-7 dark:text-white">{frontmatter.title}</h1>
-        <h2 class="m-0 !text-xl mb-7 dark:text-zinc-300">Written by {frontmatter.author}</h2>
-      </div>
-      <section class="dark:text-zinc-200 prose-a:dark:text-blue-400 prose-a:text-blue-600 prose-xl !text-[1.18rem] prose-img:rounded-xl">
+        <nav class="flex flex-col sm:flex-row sm:space-x-3 text-base dark:text-slate-400">
+          <time datetime={frontmatter.pubDate} class="mb-3 sm:mb-0">
+            {thisDate}
+          </time>
+          <span class="hidden sm:block">·</span>
+          <span>Written by {frontmatter.author}</span>
+        </nav>
+        
+      </header>
+      <section class="dark:text-slate-200 prose-a:dark:text-slate-400 prose-a:text-slate-500 prose-xl !text-[1.18rem] prose-img:rounded-xl">
         <article>
           <slot />
         </article>
       </section>
-      <br>
-      <div class="flex flex-row justify-between items-center">
-        <a href="/blog" class="dark:text-blue-400 text-blue-600">Go back to posts</a>
-        <a href="#" class="dark:text-blue-400 text-blue-600">Go back to top</a>
-      </div>
+      <footer class="flex flex-row justify-between items-center">
+        <a href="/blog" class="dark:text-slate-400 text-lg text-slate-700">Back to posts</a>
+      </footer>
     </main>
   </body>
 </html>
