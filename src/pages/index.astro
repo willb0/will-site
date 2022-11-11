@@ -1,8 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Icon from "astro-icon";
 import { Picture } from "@astrojs/image/components";
 import Lance from "@images/lanceross.jpg";
+import Socials from "@components/Socials.astro";
 ---
 
 <Layout>
@@ -11,49 +11,24 @@ import Lance from "@images/lanceross.jpg";
       <Picture src={Lance} alt="Image of the author" aspectRatio="1:1" widths={[160, 320, 480]} loading="eager" sizes="160px" width={160} height={160} />
     </div>
     <header class="mt-8 max-w-lg sm:my-0">
-      <h1 class="mb-4 text-3xl font-bold tracking-tight text-white">Lance Ross</h1>
-      <h2 class="mb-4 text-zinc-300">Student Web Developer 👨‍💻</h2>
-      <p class="max-w-10 font-normal leading-7 text-zinc-400 sm:max-w-sm md:max-w-xl">
+      <h1 class="mb-4 text-3xl font-bold tracking-tight dark:text-white">Lance Ross</h1>
+      <h2 class="mb-4 dark:text-zinc-200">Student Web Developer</h2>
+      <p class="max-w-10 font-normal leading-7 dark:text-zinc-300 sm:max-w-sm md:max-w-xl">
         Welcome to my home on the internet. I'm an aspiring web developer in the Philippines building different projects for fun with web technologies I'm currently learning.
       </p>
     </header>
   </section>
   <section>
     <div class="py-14 grid place-items-center text-center">
-      <h1 class="text-3xl mb-8">Who am I? 🤔</h1>
-      <p class="max-w-10 dark:text-zinc-300">
+      <h1 class="text-3xl mb-8">Who am I?</h1>
+      <p class="max-w-2xl dark:text-zinc-300">
         Hey there! I'm Lance Ross. I am an aspiring Web developer in the Philippines. You probably saw me on Twitter tweeting about 100 Days of Code, or maybe you just saw me randomly on the
         internet.
       </p>
-      <p class="max-w-10 dark:text-zinc-300">
-        Interested with projects I'm working on? You can go to my projects page. I also have a 
-      </p>
+      <p class="mt-5 max-w-lg dark:text-zinc-300">Interested with projects I'm working on? You can go to my projects page. I also have a</p>
     </div>
   </section>
   <section>
-    <div class="py-14 grid place-items-center text-center">
-      <h2 class="text-3xl mb-8">Get In Touch 💬</h2>
-      <p class="max-w-lg dark:text-zinc-300">
-        If you want collab on a small project or just want say hello to me, Feel free to <a
-          href="mailto:lancerossdev@duck.com"
-          target="_blank"
-          class="text-blue-600 dark:text-blue-400 cursor-pointer transition">send an email</a
-        > and I will look forward to your message!
-      </p>
-      <div class="mt-8 flex space-evenly items-center">
-        <a class="mx-4" href="https://twitter.com/lancerossdev" target="_blank" rel="noopener nofollow noreferrer" aria-label="Twitter Logo"
-          ><Icon name="eva:twitter-outline" class="w-7 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 hover:scale-110 transition-all" />
-        </a>
-        <a class="mx-4" href="https://github.com/lancerossdev" target="_blank" rel="noopener nofollow noreferrer" aria-label="GitHub Logo">
-          <Icon name="eva:github-outline" class="w-7 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 hover:scale-110 transition-all" />
-        </a>
-        <a class="mx-4" href="mailto:lancerossdev@duck.com" target="_blank" rel="noopener nofollow noreferrer" aria-label="Dev Community Logo">
-          <Icon name="eva:email-outline" class="w-7 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 hover:scale-110 transition-all" />
-        </a>
-        <a class="mx-4" href="https://codepen.io/lancerossdev" target="_blank" rel="noopener nofollow noreferrer" aria-label="CodePen Logo">
-          <Icon name="akar-icons:codepen-fill" class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 hover:scale-110 transition-all" />
-        </a>
-      </div>
-    </div>
+    <Socials />
   </section>
 </Layout>

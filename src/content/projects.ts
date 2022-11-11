@@ -1,10 +1,10 @@
 export const projects = [
   {
-    "title": "astro-og-netlify",
+    "title": "og-edge-netlify",
     "projectUrl": "https://og.lanceross.xyz/",
-    "githubUrl": "https://github.com/lancerossdev/astro-og-netlify",
+    "githubUrl": "https://github.com/lancerossdev/og-edge-netlify",
     "description": "An OG Image Generator running on Netlify Edge Functions",
-    "technologies": ["TypeScript", "React", "Netlify"]
+    "technologies": ["TypeScript", "Deno", "Netlify"]
   },
   {
     "title": "astro-basic-blog",
