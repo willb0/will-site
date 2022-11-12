@@ -21,6 +21,7 @@ pnpm-debug.log*
 # unnecessary directories
 .vercel
 .vscode
+.netlify
 
 # package manager lock files
 package-lock.json

@@ -1,6 +1,6 @@
 # [lanceross.xyz](https://lanceross.xyz) 🚀
 
-Hello, this is the source code for my new personal website. This website is made with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com) for the Front-end and is hosted using [Cloudflare Pages](https://pages.cloudflare.com).
+Hello, this is the source code for my new personal website. This website is made with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com) and hosted in [Netlify](https://netlify.com).
 I update this project every time I upload a new blog post, add/update a project on the projects page, when I encounter an issue to fix, and when I want to add a new feature.
 
 You can [create an Issue](https://github.com/lancerossdev/lanceross.xyz/issues/new) if you think there's something wrong or you want to recommend a feature on my website. I appreciate your help!

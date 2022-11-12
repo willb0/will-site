@@ -28,9 +28,9 @@ const { title, description, technologies, githubUrl, projectUrl } = Astro.props;
   </header>
   {
     technologies && (
-      <ul class="flex gap-2 flex-wrap">
+      <ul class="flex gap-2 flex-wrap text-black dark:text-white">
         {technologies.map((tech) => (
-          <li class="dark:bg-[#1b1e27] bg-[#e6e6e6] dark:text-white py-0.5 px-2 text-sm rounded-md transition-colors">{tech}</li>
+          <li class="dark:bg-[#1b1e27] bg-[#e6e6e6] py-0.5 px-2 text-sm rounded-md transition-colors">{tech}</li>
         ))}
       </ul>
     )
