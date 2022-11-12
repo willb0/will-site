@@ -10,10 +10,14 @@ const thisDate = new Date(pubDate).toLocaleDateString("en", {
   dateStyle: "long",
 });
 pubDate = pubDate.split("T")[0];
+
+const ogImageParams = new URLSearchParams({
+  title: JSON.stringify(frontmatter.title)
+}).toString();
 ---
 
 <!DOCTYPE html>
-<html lang="en-US" style="scroll-behavior: smooth;">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -26,7 +30,7 @@ pubDate = pubDate.split("T")[0];
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:description" content={frontmatter.description} />
-    <meta property="og:image" content={frontmatter.ogimage} />
+    <meta property="og:image" content={`/og?${ogImageParams}`} />
     <meta property="og:site_name" content="Lance Ross" />
     <meta property="og:locale" content="en_US" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -35,10 +39,10 @@ pubDate = pubDate.split("T")[0];
     <meta name="twitter:creator" content="@lancerossdev" />
     <meta property="twitter:title" content={frontmatter.title} />
     <meta property="twitter:description" content={frontmatter.description} />
-    <meta property="twitter:image" content={frontmatter.ogimage} />
+    <meta property="twitter:image" content={`/og?${ogImageParams}`} />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
-    <meta name="author" content={frontmatter.author} />
+    <meta name="author" content="Lance Ross" />
     <script is:inline>
       const primaryColorScheme = "none";
       const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -84,7 +88,7 @@ pubDate = pubDate.split("T")[0];
             {thisDate}
           </time>
           <span class="hidden sm:block">·</span>
-          <span>Written by {frontmatter.author}</span>
+          <span>Written by Lance Ross</span>
         </nav>
         
       </header>
