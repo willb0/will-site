@@ -1,7 +1,7 @@
 export const blogs = [
   {
     "title": "My new Astro Blog Template",
-    "description": "I just want to share the blog template that I created using Astro!",
+    "description": "I just want to share the blog template that I did using Astro!",
     "pubDate": "2022-10-17",
     "url": "/blog/my-new-astro-template",
   },

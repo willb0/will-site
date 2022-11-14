@@ -16,7 +16,7 @@ import { technologies } from "@content/technologies";
     <div class="mb-12 dark:text-zinc-300">
       <h1 class="text-4xl my-6 dark:text-white">Tech Stack</h1>
       <p>I love exploring new libraries and frameworks. Here is a short list of technologies that I learn and use with my side projects.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-5">
+      <div class="sm:grid flex flex-col sm:grid-cols-2 md:grid-cols-3 my-5">
         {technologies.map((tech) => <Technologies logo={tech.logo} text={tech.text} />)}
       </div>
     </div>
