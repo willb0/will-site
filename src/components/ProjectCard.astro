@@ -12,25 +12,25 @@ export interface Props {
 const { title, description, technologies, githubUrl, projectUrl } = Astro.props;
 ---
 
-<div class="text-lg p-6 my-2 flex flex-col gap-2 dark:bg-[#13151b] text-black dark:text-zinc-400 bg-[#efefef] rounded-xl shadow-xl transition-colors">
+<div class="text-lg p-6 my-2 flex flex-col gap-2 dark:bg-[#13151b] text-black dark:text-zinc-400 bg-[#efefef] rounded-xl shadow-xl transition-colors motion-reduce:transition-none">
   <header class="flex justify-between items-center">
     <h2 class="text-xl font-medium dark:text-white">
       {title}<a href={projectUrl} target="_blank" rel="noopener nofollow noreferrer" aria-label="external link button" class="ml-2"
         ><Icon
           name="eva:external-link-outline"
-          class="w-5 inline-block dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-all"
+          class="w-5 inline-block dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none"
         />
       </a>
     </h2>
     <a href={githubUrl} target="_blank" rel="noopener nofollow noreferrer" aria-label="github button"
-      ><Icon name="eva:github-outline" class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-all" />
+      ><Icon name="eva:github-outline" class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
     </a>
   </header>
   {
     technologies && (
       <ul class="flex gap-2 flex-wrap text-black dark:text-white">
         {technologies.map((tech) => (
-          <li class="dark:bg-[#1b1e27] bg-[#e6e6e6] py-0.5 px-2 text-sm rounded-md transition-colors">{tech}</li>
+          <li class="dark:bg-[#1b1e27] bg-[#e6e6e6] py-0.5 px-2 text-sm rounded-md transition-colors motion-reduce:transition-none">{tech}</li>
         ))}
       </ul>
     )

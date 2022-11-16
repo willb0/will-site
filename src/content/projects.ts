@@ -1,9 +1,9 @@
 export const projects = [
   {
     "title": "og-edge-netlify",
-    "projectUrl": "https://og.lanceross.xyz/",
+    "projectUrl": "https://ogimage.lanceross.xyz/",
     "githubUrl": "https://github.com/lancerossdev/og-edge-netlify",
-    "description": "An OG Image Generator running on Netlify Edge Functions",
+    "description": "An OG Image Generator running on Netlify Edge Functions.",
     "technologies": ["TypeScript", "React", "Netlify"]
   },
   {
