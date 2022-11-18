@@ -1,17 +1,30 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import BlogCard from "@components/BlogCard.astro";
-import { blogs } from "@content/blogs";
+
+interface Frontmatter {
+  title: string;
+  pubDate: string;
+  description: string;
+}
+
+let blogs = await Astro.glob<Frontmatter>("./blog/*.mdx");
+blogs = blogs.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+
+const title = "Blog";
+const description = "This is where I write about my experiences as a web developer, and share my thoughts in web development field.";
 ---
 
-<Layout title="Blog - Lance Ross" description="This is where you can find my all my posts about web development.">
+<Layout title="Blog - Lance Ross" description="A collection of my thoughts and ideas.">
   <section>
-    <h1 class="text-4xl mb-6 dark:text-white">My Blog</h1>
-    <p class="dark:text-zinc-300">
-      This is where I write about my experiences as a web developer, and share my thoughts in web development field. I also write about my personal life here.
-    </p><br />
+    <h1 class="text-4xl mb-6 dark:text-white">{title}</h1>
+    <p class="dark:text-zinc-300 mb-6">
+      {description}
+    </p>
   </section>
   <section>
-    {blogs.map((blog) => <BlogCard title={blog.title} description={blog.description} pubDate={blog.pubDate} url={blog.url} />)}
+    <ul>
+      {blogs.map((post) => <BlogCard title={post.frontmatter.title} description={post.frontmatter.description} pubDate={post.frontmatter.pubDate} url={post.url} />)}
+    </ul>
   </section>
 </Layout>

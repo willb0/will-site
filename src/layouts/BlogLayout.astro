@@ -14,6 +14,8 @@ pubDate = pubDate.split("T")[0];
 const ogImageParams = new URLSearchParams({
   title: JSON.stringify(frontmatter.title)
 }).toString();
+
+const bodyClass = "transition motion-reduce:transition-none scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-slate-300 dark:scrollbar-thumb-[#454b5f] dark:scrollbar-track-[#1d1f2a] dark:bg-[#101218] dark:text-white font-inter selection:bg-[#3d94ff42] min-h-screen flex flex-col sm:text-xl";
 ---
 
 <!DOCTYPE html>
@@ -78,7 +80,7 @@ const ogImageParams = new URLSearchParams({
     </script>
   </head>
   <body
-    class="transition motion-reduce:transition-none scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-slate-300 dark:scrollbar-thumb-[#454b5f] dark:scrollbar-track-[#1d1f2a] dark:bg-[#101218] dark:text-white font-inter selection:bg-[#3d94ff42] min-h-screen flex flex-col sm:text-xl overflow-auto"
+    class={bodyClass}
   >
     <Header />
     <main class="m-auto p-6 max-w-4xl md:p-10 md:px-20">
@@ -93,13 +95,13 @@ const ogImageParams = new URLSearchParams({
         </nav>
         
       </header>
-      <section class="dark:text-slate-200 prose-a:dark:text-slate-400 hover:prose-a:underline prose-a:text-slate-500 prose-xl !text-[1.18rem]">
+      <section class="dark:text-slate-200 prose-a:dark:text-blue-400 hover:prose-a:underline prose-a:text-blue-700 prose-xl !text-[1.18rem] prose-a:underline-offset-2">
         <article>
           <slot />
         </article>
       </section>
       <footer class="flex flex-row justify-between items-center mt-10">
-        <a href="/blog" class="hover:underline dark:text-slate-400 text-slate-500">Back to posts</a>
+        <a href="/blog" class="hover:underline prose-a:underline-offset-2 dark:text-blue-400 text-blue-700">Back to posts</a>
       </footer>
     </main>
   </body>

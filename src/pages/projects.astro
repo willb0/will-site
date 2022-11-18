@@ -1,21 +1,22 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import { projects } from "@content/projects";
+import projects from "@content/projects.json";
+
+const title = "Projects";
+const description = "Here is a list of open source projects that I own and contribute to. This list get updated every build and deploy!";
 ---
 
-<Layout title="Projects - Lance Ross" description="Here are all my small projects from my GitHub.">
+<Layout title="Projects - Lance Ross" description="This is a list of projects I own and contribute to.">
   <section>
-    <h1 class="text-4xl mb-6 dark:text-white">My Projects</h1>
+    <h1 class="text-4xl mb-6 dark:text-white">{title}</h1>
     <p class="dark:text-zinc-300 mb-5">
-      These are all projects that I own and contribute to during my free time. Each project have a link on their repositories and a demo link so you can visit the project on your browser if I deployed it to the internet.
+      {description}
     </p>
-    <section class="grid sm:grid-cols-2 gap-5 mb-5">
-      {
-        projects.map((project) => (
-          <ProjectCard title={project.title} description={project.description} projectUrl={project.projectUrl} githubUrl={project.githubUrl} technologies={project.technologies} />
-        ))
-      }
+    <section>
+      <ul class="grid sm:grid-cols-2 gap-5 mb-5">
+        {projects.map((project) => <ProjectCard title={project.title} description={project.description} githubUrl={project.githubUrl} technologies={project.technologies} />)}
+      </ul>
     </section>
   </section>
 </Layout>

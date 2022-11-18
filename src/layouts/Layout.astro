@@ -17,7 +17,10 @@ const defaultMeta = {
 };
 
 const { title = defaultMeta.title, description = defaultMeta.description, heroImage = defaultMeta.image, imageAlt = defaultMeta.imageAlt } = Astro.props as Props;
-const canonicalURL = new URL(Astro.url).href;
+const canonicalURL = new URL(Astro.url).href
+
+const classBody = "transition motion-reduce:transition-none scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-nord-500 dark:scrollbar-track-nord-700 dark:bg-nord-900 dark:text-white font-inter selection:bg-blue-500/70 text-xl";
+
 ---
 
 <!DOCTYPE html>
@@ -82,7 +85,7 @@ const canonicalURL = new URL(Astro.url).href;
       });
     </script>
   </head>
-  <body class="transition motion-reduce:transition-none scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-[#454b5f] dark:scrollbar-track-[#1d1f2a] dark:bg-[#101218] dark:text-white font-inter selection:bg-[#3d94ff42] text-xl">
+  <body class={classBody}>
     <Header />
     <main class="m-auto p-6 max-w-4xl md:p-8">
       <slot />

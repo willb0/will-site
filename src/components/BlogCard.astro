@@ -12,9 +12,9 @@ const fullDate = new Date(pubDate).toLocaleDateString("en", {
 url = url + "/";
 ---
 
-<div class="sm:grid flex flex-col gap-2 sm:grid-cols-4 leading-relaxed rounded-2xl border-zinc-700 dark:text-zinc-400 transition-colors motion-reduce:transition-none">
+<li class="sm:grid flex flex-col gap-2 sm:grid-cols-4 leading-relaxed rounded-2xl border-zinc-700 dark:text-zinc-400 transition-colors motion-reduce:transition-none">
   <time datetime={pubDate} class="hidden sm:block text-sm tracking-wide text-black dark:text-zinc-400 mt-6 motion-reduce:transition-none">{fullDate}</time>
-  <a class="col-span-3 flex flex-col gap-2 sm:gap-4 shadow-xl sm:shadow-none p-5 my-2 hover:dark:bg-[#161923] hover:bg-[#e5e5e5] rounded-lg transition-colors motion-reduce:transition-none" href={url}>
+  <a class="col-span-3 flex flex-col gap-2 sm:gap-4 shadow-xl sm:shadow-none p-5 my-2 hover:dark:bg-nord-800 hover:bg-zinc-200 rounded-lg transition-colors motion-reduce:transition-none" href={url}>
     <time datetime={pubDate} class="block sm:hidden text-sm tracking-wide text-black dark:text-zinc-400">{fullDate}</time>
     <h2
       class="text-xl text-black dark:text-white transition-colors motion-reduce:transition-none"
@@ -23,4 +23,4 @@ url = url + "/";
     </h2>
     <p class="text-base text-black dark:text-zinc-400 transition-colors motion-reduce:transition-none">{description}</p>
   </a>
-</div>
+</li>
