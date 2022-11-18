@@ -1,4 +1,4 @@
-export const technologies = [
+[
   {
     "logo": "vscode-icons:file-type-astro",
     "text": "Astro"
@@ -20,8 +20,8 @@ export const technologies = [
     "text": "Vite"
   },
   {
-    "logo":"logos:vue",
-    "text":"Vue"
+    "logo": "logos:vue",
+    "text": "Vue"
   },
   {
     "logo": "logos:preact",

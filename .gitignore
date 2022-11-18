@@ -18,12 +18,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# unnecessary directories
-.vercel
-.vscode
+# netlify specific files
 .netlify
 
-# package manager lock files
+# we use pnpm for package management
 package-lock.json
-pnpm-lock.yaml
 yarn.lock
