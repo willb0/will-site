@@ -21,7 +21,7 @@ export default defineConfig({
         astroLayouts,
         {
           default: "@layouts/Layout.astro",
-          blog: "@layouts/BlogLayout.astro", // you can also use an alias
+          blog: "@layouts/BlogLayout.astro",
         },
       ],
     ],
