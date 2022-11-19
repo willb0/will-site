@@ -16,15 +16,6 @@ export default defineConfig({
       theme: "github-dark-dimmed",
       wrap: true,
     },
-    remarkPlugins: [
-      [
-        astroLayouts,
-        {
-          default: "@layouts/Layout.astro",
-          blog: "@layouts/BlogLayout.astro",
-        },
-      ],
-    ],
   },
   vite: {
     ssr: {
@@ -37,5 +28,14 @@ export default defineConfig({
     js: true,
     img: true,
     svg: true,
-  }), tailwind(), sitemap(), mdx(), image()],
+  }), tailwind(), sitemap(), mdx({
+    remarkPlugins: [
+      [
+        astroLayouts,
+        {
+          blog: "@layouts/BlogLayout.astro",
+        },
+      ],
+    ],
+  }), image()],
 });
