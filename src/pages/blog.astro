@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import BlogCard from "@components/BlogCard.astro";
+import { Icon } from "astro-icon";
 
 interface Frontmatter {
   title: string;
@@ -17,7 +18,12 @@ const description = "This is where I write about my experiences as a web develop
 
 <Layout title="Blog - Lance Ross" description="A collection of my thoughts and ideas.">
   <section>
-    <h1 class="text-4xl mb-6 dark:text-white">{title}</h1>
+    <h1 class="text-4xl mb-6 dark:text-white">
+      {title}
+      <a href="/rss.xml">
+        <Icon name="akar-icons:rss" class="inline-block ml-2 w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
+      </a>
+    </h1>
     <p class="dark:text-zinc-300 mb-6">
       {description}
     </p>
