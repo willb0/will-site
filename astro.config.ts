@@ -33,6 +33,7 @@ export default defineConfig({
       [
         astroLayouts,
         {
+          default: "@layouts/Layout.astro",
           blog: "@layouts/BlogLayout.astro",
         },
       ],
