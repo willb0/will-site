@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 interface DataType {
   data: {
     viewer: {
-      repositoriesContributedTo: {
+      repositories: {
         nodes: Repo[];
       };
     };
@@ -12,9 +12,9 @@ interface DataType {
 }
 
 interface Repo {
-  nameWithOwner: string;
+  name: string;
   description: string;
-  githubUrl: string;
+  url: string;
   languages: {
     nodes: Language[];
   };
@@ -24,7 +24,7 @@ interface Language {
   name: string;
 }
 
-async function getLatestProjects() {
+async function getProjects() {
   const res = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
@@ -35,16 +35,15 @@ async function getLatestProjects() {
       query: `
       query {
         viewer {
-          repositoriesContributedTo(
-            first: 20
-            orderBy: {field: STARGAZERS, direction: DESC}
-            contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]
+          repositories(
+            last: 20
+            isFork: false
           ) {
             nodes {
-              nameWithOwner
+              name
               description
-              githubUrl
-              languages(first: 4, orderBy: {field: SIZE, direction: DESC}) {
+              url
+              languages(first: 3, orderBy: {field: SIZE, direction: DESC}) {
                 nodes {
                   name
                 }
@@ -58,20 +57,20 @@ async function getLatestProjects() {
   });
 
   const { data } = (await res.json()) as DataType;
-  const projects = data.viewer.repositoriesContributedTo.nodes
+  const contributions = data.viewer.repositories.nodes
     .filter((repo) => repo.languages.nodes.length > 1)
     .map((repository) => {
       return {
-        title: repository.nameWithOwner,
+        title: repository.name,
         description: repository.description,
         githubUrl: repository.url,
-        languages: repository.languages.nodes.map((language) => language.name),
+        technologies: repository.languages.nodes.map((language) => language.name),
       };
     });
-  return projects;
+  return contributions;
 }
 
-const projects = await getLatestProjects();
-await fs.writeFile("./src/content/projects.json", JSON.stringify(projects, null, 2));
+const contributions = await getProjects();
+await fs.writeFile("./src/content/projects.json", JSON.stringify(contributions, null, 2));
 
-console.log("Projects list updated!");
+console.log("Projects list updated");

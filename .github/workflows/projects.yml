@@ -7,7 +7,7 @@ on:
 
 jobs:
   integrations:
-    name: Update Projects List (Monthly)
+    name: Generate Contributions list
     if: github.repository_owner == 'lancerossdev'
     runs-on: ubuntu-latest
     steps:
@@ -28,20 +28,19 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run project update monthly script
+      - name: Run generate contribution list script
         run: pnpm run monthly
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROJECTS_TOKEN }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Update contributions list
-          title: Update contributions list
+          commit-message: Update projects list monthly
+          title: Update projects list monthly
           body: |
-            This PR was created by the GitHub Actions workflow **Monthly**. 
-
+            This PR was created by GitHub Actions! 
             The commit hash is _${{ github.sha }}_.
-          branch: monthly
+          branch: contributions-list
           delete-branch: true
