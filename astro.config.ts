@@ -6,15 +6,13 @@ import mdx from '@astrojs/mdx';
 import image from '@astrojs/image';
 import astroLayouts from "astro-layouts";
 
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lanceross.xyz',
   base: '/',
   markdown: {
     shikiConfig: {
-      theme: "github-dark-dimmed",
-      wrap: true,
+      theme: "poimandres",
     },
   },
   vite: {
@@ -28,6 +26,7 @@ export default defineConfig({
     js: true,
     img: true,
     svg: true,
+    logger: 0,
   }), tailwind(), sitemap(), mdx({
     remarkPlugins: [
       [

@@ -12,10 +12,11 @@ const thisDate = new Date(pubDate).toLocaleDateString("en", {
 pubDate = pubDate.split("T")[0];
 
 const ogImageParams = new URLSearchParams({
-  title: JSON.stringify(frontmatter.title)
+  title: JSON.stringify(frontmatter.title),
 }).toString();
 
-const bodyClass = "transition motion-reduce:transition-none scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-nord-500 dark:scrollbar-track-nord-700 dark:bg-nord-900 dark:text-white font-inter selection:bg-blue-500/70 sm:text-xl";
+const bodyClass =
+  "transition motion-reduce:transition-none scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-nord-500 dark:scrollbar-track-nord-700 dark:bg-nord-900 bg-white dark:text-white font-inter selection:bg-blue-500/70 sm:text-xl";
 ---
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ const bodyClass = "transition motion-reduce:transition-none scrollbar-thin scrol
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{frontmatter.title}</title>
-    <link rel="sitemap" href="/sitemap-index.xml">
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="title" content={frontmatter.title} />
     <meta name="description" content={frontmatter.description} />
@@ -80,9 +81,7 @@ const bodyClass = "transition motion-reduce:transition-none scrollbar-thin scrol
       });
     </script>
   </head>
-  <body
-    class={bodyClass}
-  >
+  <body class={bodyClass}>
     <Header />
     <main class="m-auto p-6 max-w-4xl md:p-10 md:px-20">
       <header class="mb-5">
@@ -94,9 +93,10 @@ const bodyClass = "transition motion-reduce:transition-none scrollbar-thin scrol
           <span class="hidden sm:block">·</span>
           <span>Written by Lance Ross</span>
         </nav>
-        
       </header>
-      <section class="dark:text-slate-200 prose-a:dark:text-blue-400 hover:prose-a:underline prose-a:text-blue-700 prose-xl !text-[1.18rem] prose-a:underline-offset-2">
+      <section
+        class="prose prose-xl dark:text-slate-200 prose-a:dark:text-blue-400 prose-a:no-underline prose-pre:scrollbar-thin prose-pre:scrollbar-thumb-zinc-400 prose-pre:scrollbar-track-zinc-300 prose-pre:dark:scrollbar-thumb-nord-500 prose-pre:dark:scrollbar-track-nord-700 dark:bg-nord-900 hover:prose-a:underline prose-a:text-blue-700 dark:prose-invert prose-a:underline-offset-2 dark:bg-inherit"
+      >
         <article>
           <slot />
         </article>
