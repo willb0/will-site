@@ -1,13 +1,18 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon";
+
+const metadata = {
+  title: "404 Error",
+  description: "Sorry, it doesn't exist.",
+}
 ---
 
-<Layout>
+<Layout {...metadata}>
   <section class="grid place-items-center text-center overflow-hidden mt-9">
     <Icon name="mdi:robot-dead" class="w-36 h-36" />
-    <h1 class="my-8 text-5xl font-semibold">404 Error</h1>
-    <h2 class="text-2xl dark:text-zinc-300 mb-5">Sorry, it doesn't exist.</h2>
+    <h1 class="my-8 text-5xl font-semibold">{metadata.title}</h1>
+    <h2 class="text-2xl dark:text-zinc-300 mb-5">{metadata.description}</h2>
     <a href="/" class="dark:bg-nord-700 bg-zinc-200 transition-all motion-reduce:transition-none rounded-xl p-3 text-black dark:text-white m-2 ring-2 ring-opacity-0 ring-blue-500 hover:ring-opacity-100">Go back to homepage</a>
   </section>
 </Layout>

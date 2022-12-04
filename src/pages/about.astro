@@ -2,9 +2,14 @@
 import Technologies from "@components/Technologies.astro";
 import Layout from "@layouts/Layout.astro";
 import tech from "@content/tech.json";
+
+const metadata = {
+  title: "About - Lance Ross",
+  description: "This is my about me section, you can find more about me in this page.",
+}
 ---
 
-<Layout title="About - Lance Ross" description="I'm Lance Ross, a web dev from Philippines. You can find more about me on this page.">
+<Layout {...metadata}>
   <section>
     <div class="mb-12 dark:text-zinc-300">
       <h1 class="text-4xl mb-6 dark:text-white">About Me</h1>

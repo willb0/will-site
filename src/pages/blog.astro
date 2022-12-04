@@ -12,21 +12,21 @@ interface Frontmatter {
 let blogs = await Astro.glob<Frontmatter>("./blog/*.mdx");
 blogs = blogs.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
 
-const title = "Blog";
-const description = "This is where I write about my experiences as a web developer, and share my thoughts in web development field.";
+const metadata = {
+  title: "Blog - Lance Ross",
+  description: "This is my blog section, this is where I write about my experiences and share my thoughts.",
+};
 ---
 
-<Layout title="Blog - Lance Ross" description="A collection of my thoughts and ideas.">
+<Layout {...metadata}>
   <section>
     <h1 class="text-4xl mb-6 dark:text-white">
-      {title}
+      Blog
       <a href="/rss.xml" aria-label="rss feed logo">
         <Icon name="akar-icons:rss" class="inline-block ml-2 w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
       </a>
     </h1>
-    <p class="dark:text-zinc-300 mb-6">
-      {description}
-    </p>
+    <p class="dark:text-zinc-300 mb-6">This is where I write about my experiences as a web developer, and share my thoughts in web development field.</p>
   </section>
   <section>
     <ul>

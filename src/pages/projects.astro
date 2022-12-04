@@ -3,15 +3,17 @@ import Layout from "@layouts/Layout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import projects from "@content/projects.json";
 
-const title = "Projects";
-const description = "Here is a list of open source projects that I own and contribute to. This list gets updated every month!";
+const metadata = {
+  title: "Projects - Lance Ross",
+  description: "This is my project section. This is a list of projects I own and contribute to.",
+}
 ---
 
-<Layout title="Projects - Lance Ross" description="This is a list of projects I own and contribute to.">
+<Layout {...metadata}>
   <section>
-    <h1 class="text-4xl mb-6 dark:text-white">{title}</h1>
+    <h1 class="text-4xl mb-6 dark:text-white">Projects</h1>
     <p class="dark:text-zinc-300 mb-5">
-      {description}
+      Here is a list of open source projects that I own and contribute to. This list gets updated every month!
     </p>
     <section>
       <ul class="grid sm:grid-cols-2 gap-5 mb-5">
