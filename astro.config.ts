@@ -1,15 +1,15 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import compress from "astro-compress";
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import mdx from '@astrojs/mdx';
-import image from '@astrojs/image';
+import mdx from "@astrojs/mdx";
+import image from "@astrojs/image";
 import astroLayouts from "astro-layouts";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lanceross.xyz',
-  base: '/',
+  site: "https://lanceross.xyz",
+  base: "/",
   markdown: {
     shikiConfig: {
       theme: "poimandres",
@@ -17,25 +17,33 @@ export default defineConfig({
   },
   vite: {
     ssr: {
-      external: ["svgo"]
-    }
+      external: ["svgo"],
+    },
   },
-  integrations: [compress({
-    css: true,
-    html: true,
-    js: true,
-    img: true,
-    svg: true,
-    logger: 0,
-  }), tailwind(), sitemap(), mdx({
-    remarkPlugins: [
-      [
-        astroLayouts,
-        {
-          default: "@layouts/Layout.astro",
-          blog: "@layouts/BlogLayout.astro",
-        },
+  integrations: [
+    compress({
+      css: true,
+      html: true,
+      js: true,
+      img: true,
+      svg: true,
+      logger: 0,
+    }),
+    tailwind(),
+    sitemap(),
+    mdx({
+      remarkPlugins: [
+        [
+          astroLayouts,
+          {
+            default: "@layouts/Layout.astro",
+            blog: "@layouts/BlogLayout.astro",
+          },
+        ],
       ],
-    ],
-  }), image()],
+    }),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+  ],
 });
