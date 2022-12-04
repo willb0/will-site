@@ -2,38 +2,65 @@
 import { Icon } from "astro-icon";
 import Logo from "/favicon.svg";
 
-const desktopIcons = "dark:text-zinc-300 text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none hidden sm:block";
+const desktop = [
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "/blog" },
+];
 
-const mobileIcons = "w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none";
+const mobile = [
+  { icon: "eva:person-outline", href: "/about", aria: "person outline" },
+  { icon: "eva:copy-outline", href: "/projects", aria: "copy outline" },
+  { icon: "eva:clipboard-outline", href: "/blog", aria: "clipboard outline" },
+];
 ---
 
 <header class="bg-white dark:bg-nord-900 text-lg dark:text-slate-300 transition-colors motion-reduce:transition-none m-auto max-w-6xl">
   <a href="/" class="absolute m-6" aria-label="Website Logo"><img src={Logo} alt="Website Logo" class="w-10 h-10" /></a>
   <nav class="p-8">
-    <div class="flex justify-end items-center space-x-2 m-0">
-      <div class="flex flex-row space-x-4">
-        <a class={desktopIcons} href="/about">About</a>
-        <a class={desktopIcons} href="/projects">Projects</a>
-        <a class={desktopIcons} href="/blog">Blog</a>
-      </div>
-      <div class="flex flex-row space-x-4">
-        <a class="transition-colors block sm:hidden" href="/about" aria-label="person outline">
-          <Icon name="eva:person-outline" class={mobileIcons} />
-        </a>
-        <a class="transition-colors block sm:hidden" href="/projects" aria-label="stacked outline">
-          <Icon name="eva:copy-outline" class={mobileIcons} />
-        </a>
-        <a class="transition-colors block sm:hidden" href="/blog" aria-label="clipboard outline">
-          <Icon name="eva:clipboard-outline" class={mobileIcons} />
-        </a>
-        <a href="https://github.com/lancerossdev/lanceross.xyz" target="_blank" rel="noopener nofollow" aria-label="github logo outline">
-          <Icon name="eva:github-outline" class={mobileIcons} />
-        </a>
-        <button class="theme-toggle" aria-label="theme toggle">
-          <Icon name="eva:moon-outline" class="w-6 hover:text-slate-500 dark:hover:text-slate-400 transition-colors dark:hidden motion-reduce:transition-none" />
-          <Icon name="akar-icons:sun" class="w-6 dark:text-white hover:text-slate-500 dark:hover:text-slate-400 transition-colors hidden dark:block motion-reduce:transition-none" />
-        </button>
-      </div>
-    </div>
+    <ul class="flex justify-end items-center space-x-2 m-0">
+      <li>
+        {
+          desktop && (
+            <ul class="flex flex-row space-x-4">
+              {desktop.map((desktop) => (
+                <li class="hidden sm:block">
+                  <a
+                    href={desktop.href}
+                    class="dark:text-zinc-300 text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none"
+                  >
+                    {desktop.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </li>
+      <li>
+        {
+          mobile && (
+            <ul class="flex flex-row space-x-4">
+              {mobile.map((mobile) => (
+                <li class="block sm:hidden">
+                  <a href={mobile.href} rel="noopener nofollow noreferrer" class="transition-colors" aria-label={mobile.aria}>
+                    <Icon name={mobile.icon} class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
+                  </a>
+                </li>
+              ))}
+              <li class="flex flex-row space-x-4">
+                <a href="https://github.com/lancerossdev/lanceross.xyz" target="_blank" aria-label="github logo outline">
+                  <Icon name="eva:github-outline" class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
+                </a>
+                <button class="theme-toggle" aria-label="theme toggle">
+                  <Icon name="eva:moon-outline" class="w-6 hover:text-slate-500 dark:hover:text-slate-400 transition-colors dark:hidden motion-reduce:transition-none" />
+                  <Icon name="akar-icons:sun" class="w-6 dark:text-white hover:text-slate-500 dark:hover:text-slate-400 transition-colors hidden dark:block motion-reduce:transition-none" />
+                </button>
+              </li>
+            </ul>
+          )
+        }
+      </li>
+    </ul>
   </nav>
 </header>
