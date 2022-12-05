@@ -16,5 +16,14 @@
       "Astro",
       "TypeScript"
     ]
+  },
+  {
+    "title": "no-fuss-astro",
+    "description": "An Astro Template without complicated design and setup.",
+    "githubUrl": "https://github.com/lancerossdev/no-fuss-astro",
+    "technologies": [
+      "Astro",
+      "TypeScript"
+    ]
   }
 ]
