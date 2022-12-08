@@ -15,11 +15,6 @@ export default defineConfig({
       theme: "poimandres",
     },
   },
-  vite: {
-    ssr: {
-      external: ["svgo"],
-    },
-  },
   integrations: [
     compress({
       css: true,
