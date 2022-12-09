@@ -5,3 +5,9 @@
 [[edge_functions]]
   function = "og"
   path = "/og"
+
+[[redirects]]
+  from = "https://lanceross.netlify.app*"
+  to = "https://lanceross.xyz/:splat"
+  status = 301
+  force = true
