@@ -32,13 +32,13 @@ export default async function handler(req: Request) {
           <div
             style={{
               display: "flex",
-              fontSize: "96",
+              fontSize: "88",
               color: "white",
               fontWeight: "700",
-              textAlign: "center",
               flexWrap: "wrap",
               justifyContent: "center",
               width: "100%",
+              padding: "0 3rem"
             }}
           >
             {title}
