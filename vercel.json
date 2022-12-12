@@ -1,0 +1,16 @@
+{
+  "github": {
+    "silent": true
+  },
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/blog/:slug*",
+      "destination": "https://blog.lanceross.xyz/blog/:slug*"
+    },
+    {
+      "source": "/blog",
+      "destination": "https://blog.lanceross.xyz/blog/"
+    }
+  ]
+}

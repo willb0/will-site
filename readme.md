@@ -1,16 +1,15 @@
 # [lanceross.xyz](https://lanceross.xyz) 🚀
 
-My minimal and responsive personal website proudly made with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+My minimal and responsive portfolio website inspired by [Lee Rob](https://github.com/leerob) proudly made with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-![Lance Ross Website](https://user-images.githubusercontent.com/102563271/202693651-29a91f26-6917-4f31-a0e5-05d36f7fe0e2.png)
+![bloglanceross](https://user-images.githubusercontent.com/102563271/206900019-7b12573f-db85-4e41-9c8c-e381603e7c1b.png)
 
 ## Tech Stack 🛠️
 
 - Static Site Generator: [Astro](https://astro.build/)
 - CSS Framework: [Tailwind CSS](https://tailwindcss.com/)
 - Site Analytics: [Umami Analytics](https://umami.is/)
-- App Deployment: [Netlify](https://netlify.com/)
-- OG Images: [Edge Functions](https://docs.netlify.com/functions/overview/)
+- App Deployment: [Vercel](https://vercel.com/)
 - Package Manager: [pnpm](https://pnpm.io/)
 - CI/CD: [GitHub Actions](https://github.com)
 

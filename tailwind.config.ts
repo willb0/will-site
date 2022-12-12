@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx,vue}"],
@@ -13,9 +15,9 @@ module.exports = {
             "code::after": {
               content: '""',
             },
-            "p, li": {
+            "p, li, h1": {
               code: {
-                backgroundColor: "#1d202b",
+                backgroundColor: "#27272a",
                 padding: "0.250rem 0.4rem",
                 borderRadius: "0.250rem",
                 fontWeight: "300",
@@ -23,9 +25,10 @@ module.exports = {
                 transitionProperty: "color, background-color",
                 transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                 transitionDuration: "150ms",
+                border: "1px solid #3f3f46",
               },
             },
-            "html:not(.dark) p, li": {
+            "html:not(.dark) p, li, h1": {
               code: {
                 backgroundColor: "#e4e4e7",
                 padding: "0.250rem 0.4rem",
@@ -35,30 +38,16 @@ module.exports = {
                 transitionProperty: "color, background-color",
                 transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                 transitionDuration: "150ms",
+                border: "1px solid #d4d4d8",
               },
-            },
-            "h1, h2, h3, h4": {
-              fontWeight: "300",
             },
           },
         },
       },
       fontFamily: {
-        inter: "Inter, Arial, sans-serif",
-      },
-      gridTemplateColumns: {
-        1: "repeat(auto-fit, minmax(24ch, 1fr));",
-      },
-      colors: {
-        nord: {
-          900: "#101218",
-          800: "#161923",
-          700: "#1d202b",
-          600: "#252937",
-          500: "#3d445c",
-        },
+        sans: ['Inter', ...fontFamily.sans]
       },
     },
   },
-  plugins: [require("tailwind-scrollbar"), require("@tailwindcss/typography")],
+  plugins: [require("tailwind-scrollbar")],
 };
