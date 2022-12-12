@@ -9,10 +9,11 @@ const metadata = {
 ---
 
 <Layout {...metadata}>
-  <div class="flex flex-col items-center justify-center mt-9">
+  <div class="flex flex-col items-center justify-center my-9">
     <div class="max-w-md md:max-w-2xl text-center p-4">
       <h1 class="my-8 text-5xl font-semibold">{metadata.title}</h1>
-      <h2 class="text-2xl dark:text-zinc-300 mb-5">{metadata.description}</h2>
+      <h2 class="text-2xl dark:text-zinc-300 mb-8">{metadata.description}</h2>
+      <a class="flex items-center dark:bg-zinc-800 bg-zinc-200 transition-all dark:text-white flex-col hover:ring-2 m-2 p-2 ring-zinc-300 dark:ring-zinc-700 rounded-xl text-black" href="/">Go to home</a>
     </div>
   </div>
 </Layout>

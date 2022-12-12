@@ -1,5 +1,7 @@
 ---
 import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import NoScript from "@components/NoScript.astro";
 import "@fontsource/inter";
 
 export interface Props {
@@ -19,7 +21,7 @@ const defaultMeta = {
 const { title = defaultMeta.title, description = defaultMeta.description, heroImage = defaultMeta.image, imageAlt = defaultMeta.imageAlt } = Astro.props as Props;
 const canonicalURL = new URL(Astro.url).href
 
-const classBody = "transition motion-reduce:transition-none scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-nord-500 dark:scrollbar-track-nord-700 dark:bg-nord-900 dark:text-white font-inter selection:bg-blue-500/70 text-xl";
+const classBody = "antialiased transition scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-zinc-500 dark:scrollbar-track-zinc-700 dark:bg-zinc-900 dark:text-white font-inter selection:bg-blue-500/70 text-lg sm:text-xl";
 
 ---
 
@@ -52,6 +54,7 @@ const classBody = "transition motion-reduce:transition-none scrollbar-thin scrol
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content="Lance Ross" />
+    <script src="@scripts/index.js"></script>
     <script async defer data-website-id="2c6f3c52-eb1f-4895-bbdf-504224851d11" src="https://umami.lanceross.xyz/umami.js"></script>
     <script is:inline>
       // credits to satnaing on github
@@ -71,19 +74,6 @@ const classBody = "transition motion-reduce:transition-none scrollbar-thin scrol
         }
       }
       document.documentElement.className = theme;
-    </script>
-    <script>
-      const themeBtn = document.querySelector(".theme-toggle");
-      const htmlClassList = document.documentElement.classList;
-      themeBtn.addEventListener("click", function () {
-        if (htmlClassList.contains("dark")) {
-          localStorage.setItem("theme", "light");
-          htmlClassList.remove("dark");
-        } else {
-          localStorage.setItem("theme", "dark");
-          htmlClassList.add("dark");
-        }
-      });
     </script>
   </head>
   <body class={classBody}>

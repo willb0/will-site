@@ -11,13 +11,13 @@ const metadata = {
 
 <Layout {...metadata}>
   <section>
-    <h1 class="text-4xl mb-6 dark:text-white">Projects</h1>
+    <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">Projects</h1>
     <p class="dark:text-zinc-300 mb-5">
-      Here is a list of open source projects that I own and contribute to. This list gets updated every month!
+      Here is a list of my top open source projects that I own and contribute to. This list gets updated biweekly.
     </p>
     <section>
       <ul class="grid sm:grid-cols-2 gap-5 mb-5">
-        {projects.map((project) => <ProjectCard title={project.title} description={project.description} githubUrl={project.githubUrl} technologies={project.technologies} />)}
+        {projects.map((project) => <ProjectCard title={project.title} description={project.description} githubUrl={project.githubUrl} technologies={project.technologies} stargazers={project.stargazers} />)}
       </ul>
     </section>
   </section>

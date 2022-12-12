@@ -6,28 +6,32 @@ export interface Props {
   description: string;
   technologies?: string[];
   githubUrl?: string;
+  stargazers?: number;
 }
 
-const { title, description, technologies, githubUrl } = Astro.props;
+const { title, description, technologies, githubUrl, stargazers } = Astro.props;
 ---
 
-<li class="text-lg p-6 my-2 flex flex-col gap-2 dark:bg-nord-900 text-black dark:text-zinc-400 bg-white rounded-xl shadow-xl transition-colors motion-reduce:transition-none">
+<li>
+  <a href={githubUrl} class="text-lg p-6 my-2 flex flex-col gap-2 dark:bg-zinc-900 dark:hover:bg-zinc-800 hover:bg-zinc-200 text-black dark:text-zinc-400 bg-white rounded-xl shadow-xl transition-colors">
   <header class="flex justify-between items-center">
     <h2 class="text-xl font-medium dark:text-white">
       {title}
     </h2>
-    <a href={githubUrl} target="_blank" rel="noopener nofollow noreferrer" aria-label="github button"
-      ><Icon name="eva:github-outline" class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
-    </a>
+    <div class="flex gap-2 ml-2">
+      <Icon name="ic:round-star-border" class="w-5" />
+      <span>{stargazers}</span>
+    </div>
   </header>
   {
     technologies && (
       <ul class="flex gap-2 flex-wrap text-black dark:text-white">
         {technologies.map((tech) => (
-          <li class="dark:bg-nord-700 bg-zinc-200 py-0.5 px-2 text-sm rounded-md transition-colors motion-reduce:transition-none">{tech}</li>
+          <li class="dark:bg-zinc-700/50 bg-zinc-300/50 py-0.5 px-2 text-sm rounded-md transition-colors">{tech}</li>
         ))}
       </ul>
     )
   }
   <p>{description}</p>
+</a>
 </li>

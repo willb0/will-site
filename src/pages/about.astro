@@ -2,28 +2,78 @@
 import Technologies from "@components/Technologies.astro";
 import Layout from "@layouts/Layout.astro";
 import tech from "@content/tech.json";
+import SocialLink from "@components/SocialLink.astro";
 
 const metadata = {
   title: "About - Lance Ross",
   description: "This is my about me section, you can find more about me in this page.",
-}
+};
+
+const socials = [
+  {
+    url: "https://twitter.com/lancerossdev",
+    icon: "eva:twitter-outline",
+    name: "Twitter",
+  },
+  {
+    url: "https:/github.com/lancerossdev",
+    icon: "eva:github-outline",
+    name: "GitHub",
+  },
+  {
+    url: "mailto:lancerossdev@duck.com",
+    icon: "eva:email-outline",
+    name: "Email",
+  },
+  {
+    url: "https://g.dev/lanceross",
+    icon: "ion:code",
+    name: "Google Devs",
+  },
+  {
+    url: "https://dev.to/lanceross",
+    icon: "la:dev",
+    name: "Dev Community",
+  },
+  {
+    url: "https://open.spotify.com/user/31bchcl5tiigyel5pe6kywd5dl5q",
+    icon: "la:spotify",
+    name: "Spotify",
+  },
+  {
+    url: "https://codepen.io/lanceross",
+    icon: "ant-design:codepen-outlined",
+    name: "Codepen",
+  },
+];
 ---
 
 <Layout {...metadata}>
-  <section>
-    <div class="mb-12 dark:text-zinc-300">
-      <h1 class="text-4xl mb-6 dark:text-white">About Me</h1>
-      <p>I'm Lance Ross, a Frontend Web Developer from the Philippines. I enjoy building small projects using Astro and Tailwind CSS.</p><br />
-      <p>I create basic webpages when I have free time after school. When not busy with doing projects and schoolworks, I really love to do exercise every night to stay fit!</p>
-    </div>
+  <section class="pb-10 dark:text-zinc-300">
+    <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">About Me</h1>
+    <p>I'm Lance Ross, a Frontend Web Developer from the Philippines. I enjoy building small projects using Astro and Tailwind CSS.</p><br />
+    <p>I create basic webpages when I have free time after school. When not busy with doing projects and schoolworks, I play video games like Genshin Impact.</p>
   </section>
-  <section>
-    <div class="mb-12 dark:text-zinc-300">
-      <h1 class="text-4xl my-6 dark:text-white">Tech Stack</h1>
-      <p>I love exploring new libraries and frameworks. Here is a short list of technologies that I learn and use with my side projects.</p>
-      <ul class="sm:grid flex flex-col sm:grid-cols-2 md:grid-cols-3 my-5">
-        {tech.map((tech) => <Technologies logo={tech.logo} text={tech.text} />)}
-      </ul>
-    </div>
+  <section class="py-10 dark:text-zinc-300">
+    <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">Tech Stack</h1>
+    <p>I love exploring new libraries and frameworks. Here is a short list of technologies that I learn and use with my side projects.</p>
+    <ul class="sm:grid flex flex-col sm:grid-cols-2 md:grid-cols-3 mt-7">
+      {tech.map((tech) => <Technologies logo={tech.logo} text={tech.text} />)}
+    </ul>
+  </section>
+  <section class="py-10 md:py-14 dark:text-zinc-300" class="dark:text-zinc-300">
+    <h1 class="mb-6 text-3xl sm:text-4xl font-bold tracking-tight dark:text-white">Get In Touch</h1>
+    <p>If you want collab on a small project or just want say hello to me, Feel free to send an email and I will look forward to your message! By the way, here are my socials below.</p>
+    {
+      socials && (
+        <ul class="mt-8 flex flex-wrap">
+          {socials.map((socials) => (
+            <li>
+              <SocialLink name={socials.name} icon={socials.icon} url={socials.url} colors={socials.colors} />
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </section>
 </Layout>

@@ -13,6 +13,7 @@ interface DataType {
 
 interface Repo {
   name: string;
+  stargazerCount: number;
   description: string;
   url: string;
   languages: {
@@ -36,13 +37,14 @@ async function getProjects() {
       query {
         viewer {
           repositories(
-            last: 20
+            first: 20
             isFork: false
           ) {
             nodes {
               name
               description
               url
+              stargazerCount
               languages(first: 3, orderBy: {field: SIZE, direction: DESC}) {
                 nodes {
                   name
@@ -65,6 +67,7 @@ async function getProjects() {
         description: repository.description,
         githubUrl: repository.url,
         technologies: repository.languages.nodes.map((language) => language.name),
+        stargazers: repository.stargazerCount,
       };
     });
   return contributions;

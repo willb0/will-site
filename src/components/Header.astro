@@ -1,66 +1,55 @@
 ---
 import { Icon } from "astro-icon";
+import NavLink from "@components/NavLink.astro";
 import Logo from "/favicon.svg";
 
-const desktop = [
+const navbar = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
   { name: "Blog", href: "/blog" },
-];
-
-const mobile = [
-  { icon: "eva:person-outline", href: "/about", aria: "person outline" },
-  { icon: "eva:copy-outline", href: "/projects", aria: "copy outline" },
-  { icon: "eva:clipboard-outline", href: "/blog", aria: "clipboard outline" },
+  { name: "Uses", href: "/uses" },
 ];
 ---
 
-<header class="bg-white dark:bg-nord-900 text-lg dark:text-slate-300 transition-colors motion-reduce:transition-none m-auto max-w-6xl">
-  <a href="/" class="absolute m-6" aria-label="Website Logo"><img src={Logo} alt="Website Logo" class="w-10 h-10" /></a>
-  <nav class="p-8">
-    <ul class="flex justify-end items-center space-x-2 m-0">
-      <li>
-        {
-          desktop && (
-            <ul class="flex flex-row space-x-4">
-              {desktop.map((desktop) => (
-                <li class="hidden sm:block">
-                  <a
-                    href={desktop.href}
-                    class="dark:text-zinc-300 text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none"
-                  >
-                    {desktop.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )
-        }
-      </li>
-      <li>
-        {
-          mobile && (
-            <ul class="flex flex-row space-x-4">
-              {mobile.map((mobile) => (
-                <li class="block sm:hidden">
-                  <a href={mobile.href} rel="noopener nofollow noreferrer" class="transition-colors" aria-label={mobile.aria}>
-                    <Icon name={mobile.icon} class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
-                  </a>
-                </li>
-              ))}
-              <li class="flex flex-row space-x-4">
-                <a href="https://github.com/lancerossdev/lanceross.xyz" target="_blank" aria-label="github logo outline">
-                  <Icon name="eva:github-outline" class="w-6 dark:text-white text-black hover:text-slate-500 dark:hover:text-slate-400 transition-colors motion-reduce:transition-none" />
-                </a>
-                <button class="theme-toggle" aria-label="theme toggle">
-                  <Icon name="eva:moon-outline" class="w-6 hover:text-slate-500 dark:hover:text-slate-400 transition-colors dark:hidden motion-reduce:transition-none" />
-                  <Icon name="akar-icons:sun" class="w-6 dark:text-white hover:text-slate-500 dark:hover:text-slate-400 transition-colors hidden dark:block motion-reduce:transition-none" />
-                </button>
-              </li>
-            </ul>
-          )
-        }
-      </li>
-    </ul>
+<header class="bg-white dark:bg-zinc-900 text-lg dark:text-zinc-300 mx-auto max-w-6xl flex flex-row justify-between transition-colors">
+  <nav class="flex items-center justify-between border-zinc-200 dark:border-zinc-700 dark:text-zinc-100 max-w-4xl mx-auto p-3 text-zinc-900 w-full">
+    <button
+      class="nav-toggle mx-3 my-5 flex items-center bg-zinc-200 dark:bg-zinc-800 h-9 hover:ring-2 justify-center ring-zinc-300 dark:ring-zinc-700 rounded-md shrink-0 touch-manipulation transition-all w-9 sm:hidden"
+      aria-label="menu toggle"
+    >
+      <Icon name="ion:menu" class="w-5 dark:text-white transition-colors" />
+    </button>
+    <a href="/" class="m-5"><img src={Logo} alt="Favicon" class="flex items-center w-9 h-9" /></a>
+    {
+      (
+        <ul class="flex-row hidden sm:flex">
+          {navbar.map((navbar) => (
+            <li>
+              <NavLink href={navbar.href} name={navbar.name} />
+            </li>
+          ))}
+        </ul>
+      )
+    }<button
+      class="theme-toggle mx-3 sm:mx-6 my-5 flex items-center bg-zinc-200 dark:bg-zinc-800 h-9 hover:ring-2 justify-center ring-zinc-300 dark:ring-zinc-700 rounded-md shrink-0 touch-manipulation transition-all w-9"
+      aria-label="theme toggle"
+    >
+      <Icon name="eva:moon-outline" class="w-5 text-zinc-800 transition-colors dark:hidden" />
+      <Icon name="akar-icons:sun" class="w-5 dark:text-white transition-colors hidden dark:block" />
+    </button>
   </nav>
+</header>
+<header class="nav-menu hidden bg-white dark:bg-zinc-900 transition-colors">
+  {
+    (
+      <nav class="mx-8 my-4 flex flex-col inline-flex space-y-3">
+        {navbar.map((navbar) => (
+          <a href={navbar.href} class="dark:text-zinc-300 text-black hover:text-zinc-500 dark:hover:text-zinc-400 sm:hidden">
+            {navbar.name}
+          </a>
+        ))}
+      </nav>
+    )
+  }
 </header>

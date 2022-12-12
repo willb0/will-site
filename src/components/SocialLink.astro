@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  name: string;
+  icon: string;
+  url?: string;
+  colors?: string;
+}
+
+const { name, icon, url, colors } = Astro.props;
+---
+
+<a class="flex items-center dark:bg-zinc-800 bg-zinc-200 transition-all dark:text-white flex-col hover:ring-2 m-2 p-2 ring-zinc-300 dark:ring-zinc-700 rounded-xl text-black" href={url} target="_blank" rel="noopener noreferrer">
+  <div class="flex justify-evenly items-center">
+    <Icon name={icon} class="w-6 w-6 mx-1 dark:text-white text-zinc-800" />
+    <div class="spacer"></div>
+    <p class="dark:text-zinc-300 text-zinc-800 text-lg mx-2">{name}</p>
+  </div>
+</a>

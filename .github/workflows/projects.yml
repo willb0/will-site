@@ -2,7 +2,7 @@ name: Projects List Monthly
 
 on:
   schedule:
-      - cron:  '0 0 5 * *'
+      - cron:  '0 0 */14 * *'
   workflow_dispatch:
 
 jobs:
