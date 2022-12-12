@@ -5,8 +5,10 @@
     "githubUrl": "https://github.com/lancerossdev/lanceross.xyz",
     "technologies": [
       "Astro",
-      "TypeScript"
-    ]
+      "TypeScript",
+      "JavaScript"
+    ],
+    "stargazers": 9
   },
   {
     "title": "astro-basic-blog",
@@ -15,7 +17,8 @@
     "technologies": [
       "Astro",
       "TypeScript"
-    ]
+    ],
+    "stargazers": 11
   },
   {
     "title": "no-fuss-astro",
@@ -24,6 +27,29 @@
     "technologies": [
       "Astro",
       "TypeScript"
-    ]
+    ],
+    "stargazers": 5
+  },
+  {
+    "title": "lanceross-blog",
+    "description": "A microsite version of my blog page inspired by Lee Rob.",
+    "githubUrl": "https://github.com/lancerossdev/lanceross-blog",
+    "technologies": [
+      "Astro",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "stargazers": 0
+  },
+  {
+    "title": "open-graph-images",
+    "description": "Used for generating OG Images on my with Satori.",
+    "githubUrl": "https://github.com/lancerossdev/open-graph-images",
+    "technologies": [
+      "TypeScript",
+      "CSS",
+      "JavaScript"
+    ],
+    "stargazers": 0
   }
 ]
