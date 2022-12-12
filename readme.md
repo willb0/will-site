@@ -2,7 +2,7 @@
 
 My minimal and responsive portfolio website inspired by [Lee Rob](https://github.com/leerob) proudly made with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-![image](https://user-images.githubusercontent.com/102563271/207018194-93308a30-842a-47e3-a5de-c7552f50bee8.png)
+![image](https://user-images.githubusercontent.com/102563271/207018431-0f663e79-f192-4f70-b8d7-593d898f8276.png)
 
 ## Tech Stack 🛠️
 
