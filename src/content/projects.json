@@ -8,7 +8,7 @@
       "TypeScript",
       "JavaScript"
     ],
-    "stargazers": 9
+    "stargazers": 8
   },
   {
     "title": "astro-basic-blog",
@@ -16,9 +16,10 @@
     "githubUrl": "https://github.com/lancerossdev/astro-basic-blog",
     "technologies": [
       "Astro",
-      "TypeScript"
+      "TypeScript",
+      "JavaScript"
     ],
-    "stargazers": 11
+    "stargazers": 12
   },
   {
     "title": "no-fuss-astro",
@@ -28,7 +29,7 @@
       "Astro",
       "TypeScript"
     ],
-    "stargazers": 5
+    "stargazers": 4
   },
   {
     "title": "lanceross-blog",
@@ -43,12 +44,12 @@
   },
   {
     "title": "open-graph-images",
-    "description": "Used for generating OG Images on my with Satori.",
+    "description": "Used for generating OG Images on my sites with Satori.",
     "githubUrl": "https://github.com/lancerossdev/open-graph-images",
     "technologies": [
       "TypeScript",
-      "CSS",
-      "JavaScript"
+      "JavaScript",
+      "CSS"
     ],
     "stargazers": 0
   }
