@@ -9,7 +9,15 @@
       "destination": "https://blog.lanceross.xyz/blog/:slug*"
     },
     {
+      "source": "/blog/:slug*/",
+      "destination": "https://blog.lanceross.xyz/blog/:slug*/"
+    },
+    {
       "source": "/blog",
+      "destination": "https://blog.lanceross.xyz/blog"
+    },
+    {
+      "source": "/blog/",
       "destination": "https://blog.lanceross.xyz/blog/"
     }
   ]
