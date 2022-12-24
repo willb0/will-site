@@ -1,6 +1,6 @@
 ---
-title: I tried self-hosting Umami Analytics
-description: "For today, we will self-host our own Umami Analytics using Supabase and Vercel."
+title: Self-hosting Umami Analytics
+description: "We will self-host our own Umami Analytics using Supabase and Vercel."
 pubDate: "November 29, 2022"
 ---
 import BlogImage from "@components/BlogImage.astro"
@@ -35,16 +35,16 @@ postgres://postgres:[YOUR-PASSWORD]@host:6543/postgres
 ### Step 2: Test it locally
 Fork the [Umami Analytics](https://github.com/umami-software/umami) repository and clone it to your local machine. After that, open the project on your favorite code editor and install the dependencies by running `yarn install` since the project uses `yarn` as its package manager.
 
-Now, for testing locally, you need to create a `.env` file and add the following environment variables:
+Now, for testing locally, you need to create a `.env` file and add the following environment variables given by Supabase:
 
 ```bash
-DATABASE_URL=postgres://postgres:postgres@localhost:5432/umami
-HASH_SALT=anything
+DATABASE_URL=postgres://postgres:[YOUR-PASSWORD]@host:6543/postgres?pgbouncer=true
+HASH_SALT=anything-random-here
 ```
 
-You should now be able to build and start Umami on a local server with `yarn run build` followed by `yarn start`.
+You can add any valid string for the hash salt. You should now be able to build and start Umami on a local server with `yarn run build` followed by `yarn start`.
 
-> IMPORTANT: After you accessed your account with the default username and password, please change the username password immediately to avoid getting your Umami Analytics account hacked.
+> IMPORTANT: After you accessed your account with the default login credentials, please change the username and password immediately to avoid getting your Umami Analytics dashboard get exploited by hackers.
 
 ### Step 3: Deploy Umami to Vercel
 
@@ -58,12 +58,12 @@ Now your Umami Analytics is now deployed to Vercel! 🎉
 
 ### Step 4: Add Umami to your website
 
-Now, you can add Umami to your website. First, create a website on the Umami Dashboard with the domain of your site. You can add it to your website by looking for the script tracking that looks something like this:
+Now, you can add Umami to your website. First, create a website on the Umami Dashboard with the domain of your site. You can add it on the `<head>` element tag to your website by looking for the script tracking that looks something like this:
 
 ```html
 <script async defer data-website-id="YOUR-WEBSITE-ID" src="https://example.com/umami.js"></script>
 ```
 
-And there you go, you now have your own Umami Analytics! This website also uses one, you can check it out by clicking the network traffic and look for the `umami.js` file. If you have an adblocker, it might be blocked depending on the filters of your adblocker.
+And there you go, you now have your own Umami Analytics! This website also uses one back then, but I decided to remove it since I don't want to track my own website and my visitors anymore 😅
 
 That's it for now! I hope you enjoyed reading this tutorial! If you have any questions, feel free to ask me on [Twitter](https://twitter.com/lancerossdev) or [GitHub](https://github.com/lancerossdev)! I'll be happy to answer your questions!

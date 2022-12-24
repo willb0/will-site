@@ -14,7 +14,7 @@ export default defineConfig({
     
     extendDefaultPlugins: true,
     shikiConfig: {
-      theme: "vitesse-dark",
+      theme: "slack-dark",
       wrap: false,
     },
   },

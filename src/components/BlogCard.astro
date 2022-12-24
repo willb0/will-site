@@ -1,7 +1,6 @@
 ---
 export interface Props {
   title: string;
-  description: string;
   pubDate: string;
   url: string | undefined;
 }
@@ -13,7 +12,7 @@ url = url + "/";
 ---
 
 <li class="sm:grid flex flex-col gap-2 sm:grid-cols-3 leading-relaxed rounded-2xl text-zinc-400">
-  <a class="col-span-3 flex flex-col rounded-lg gap-2 sm:gap-4 p-5 my-3 hover:bg-zinc-800/60 hover:ring-2 transition" href={url}>
+  <a class="col-span-3 flex flex-col rounded-lg gap-2 sm:gap-4 p-4 my-3 hover:bg-zinc-800/60 hover:ring-2 transition" href={url}>
     <time datetime={pubDate} class="block sm:hidden text-sm tracking-wide text-zinc-400">{shortDate}</time>
     <span class="flex items-center justify-between">
       <h2
@@ -22,8 +21,6 @@ url = url + "/";
       {title}
     </h2>
     <time datetime={pubDate} class="hidden sm:block text-sm tracking-wide text-zinc-400">{shortDate}</time>
-
     </span>
-    <p class="text-base text-zinc-400">{description}</p>
   </a>
 </li>

@@ -7,6 +7,8 @@ let { pubDate } = Astro.props.content;
 const { frontmatter } = Astro.props;
 const canonicalURL = new URL(Astro.url).href;
 
+const ogImage = "/opengraph.png"
+
 const thisDate = new Date(pubDate).toLocaleDateString("en", {
   dateStyle: "medium",
 });
@@ -30,7 +32,7 @@ pubDate = pubDate.split("T")[0];
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:description" content={frontmatter.description} />
-    <meta property="og:image" content="null" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="Lance Ross" />
     <meta property="og:locale" content="en_US" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -39,7 +41,7 @@ pubDate = pubDate.split("T")[0];
     <meta name="twitter:creator" content="@lancerossdev" />
     <meta property="twitter:title" content={frontmatter.title} />
     <meta property="twitter:description" content={frontmatter.description} />
-    <meta property="twitter:image" content="null" />
+    <meta property="twitter:image" content={ogImage} />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content="Lance Ross" />
