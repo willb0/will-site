@@ -1,26 +1,26 @@
 [
   {
-    "logo": "vscode-icons:file-type-astro",
+    "logo": "simple-icons:astro",
     "text": "Astro"
   },
   {
-    "logo": "logos:javascript",
+    "logo": "akar-icons:javascript-fill",
     "text": "JavaScript"
   },
   {
-    "logo": "logos:typescript-icon",
+    "logo": "cib:typescript",
     "text": "TypeScript"
   },
   {
-    "logo": "logos:tailwindcss-icon",
+    "logo": "simple-icons:tailwindcss",
     "text": "Tailwind"
   },
   {
-    "logo": "logos:vue",
+    "logo": "akar-icons:vue-fill",
     "text": "Vue"
   },
   {
-    "logo": "logos:react",
+    "logo": "ion:logo-react",
     "text": "React"
   }
 ]

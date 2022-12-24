@@ -1,0 +1,32 @@
+---
+import Layout from "@layouts/Layout.astro";
+import BlogCard from "@components/BlogCard.astro";
+
+interface Frontmatter {
+  title: string;
+  pubDate: string;
+  description: string;
+}
+
+let blogs = await Astro.glob<Frontmatter>("./blog/*.mdx");
+blogs = blogs.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+
+const metadata = {
+  title: "Blog - Lance Ross",
+  description: "This is my blog section, this is where I you can find all of my blog posts including archives.",
+};
+---
+
+<Layout {...metadata}>
+  <section>
+    <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">Blog Posts</h1>
+    <p class="dark:text-zinc-300 mb-6">
+      This is where I write about my experiences as a student web developer, and share some basic tutorials in web development. Currently, I have published {blogs.length} blog posts.
+    </p>
+  </section>
+  <section>
+    <ul>
+      {blogs.map((post) => <BlogCard title={post.frontmatter.title} description={post.frontmatter.description} pubDate={post.frontmatter.pubDate} url={post.url} />)}
+    </ul>
+  </section>
+</Layout>

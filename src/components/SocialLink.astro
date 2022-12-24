@@ -5,10 +5,9 @@ export interface Props {
   name: string;
   icon: string;
   url?: string;
-  colors?: string;
 }
 
-const { name, icon, url, colors } = Astro.props;
+const { name, icon, url } = Astro.props as Props;
 ---
 
 <a class="flex items-center dark:bg-zinc-800 bg-zinc-200 transition-all dark:text-white flex-col hover:ring-2 m-2 p-2 ring-zinc-300 dark:ring-zinc-700 rounded-xl text-black" href={url} target="_blank" rel="noopener noreferrer">

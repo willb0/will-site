@@ -35,26 +35,11 @@ const socials = [
     icon: "la:dev",
     name: "Dev Community",
   },
-  {
-    url: "https://open.spotify.com/user/31bchcl5tiigyel5pe6kywd5dl5q",
-    icon: "la:spotify",
-    name: "Spotify",
-  },
-  {
-    url: "https://codepen.io/lanceross",
-    icon: "ant-design:codepen-outlined",
-    name: "Codepen",
-  },
 ];
 ---
 
 <Layout {...metadata}>
   <section class="pb-10 dark:text-zinc-300">
-    <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">About Me</h1>
-    <p>I'm Lance Ross, a Frontend Web Developer from the Philippines. I enjoy building small projects using Astro and Tailwind CSS.</p><br />
-    <p>I create basic webpages when I have free time after school. When not busy with doing projects and schoolworks, I play video games like Genshin Impact.</p>
-  </section>
-  <section class="py-10 dark:text-zinc-300">
     <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">Tech Stack</h1>
     <p>I love exploring new libraries and frameworks. Here is a short list of technologies that I learn and use with my side projects.</p>
     <ul class="sm:grid flex flex-col sm:grid-cols-2 md:grid-cols-3 mt-7">
@@ -69,7 +54,7 @@ const socials = [
         <ul class="mt-8 flex flex-wrap">
           {socials.map((socials) => (
             <li>
-              <SocialLink name={socials.name} icon={socials.icon} url={socials.url} colors={socials.colors} />
+              <SocialLink name={socials.name} icon={socials.icon} url={socials.url} />
             </li>
           ))}
         </ul>
