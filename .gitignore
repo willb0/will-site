@@ -21,6 +21,6 @@ pnpm-debug.log*
 # vercel specific files
 .vercel
 
-# we use pnpm for package management
+# please use pnpm
 package-lock.json
 yarn.lock

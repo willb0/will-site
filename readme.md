@@ -1,4 +1,4 @@
-# [lanceross.xyz](https://lanceross.xyz) 🚀
+# [lanceross](https://lanceross.vercel.app) 🚀
 
 My minimal and responsive portfolio website inspired by [Lee Rob](https://github.com/leerob) proudly made with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
@@ -33,4 +33,4 @@ pnpm preview
 
 ## License ⚖️
 
-This repository has [MIT License](https://github.com/lancerossdev/lanceross.xyz/blob/main/LICENSE).
+This repository has [MIT License](https://github.com/lancerossdev/web/blob/main/LICENSE).
