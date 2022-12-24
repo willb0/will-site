@@ -39,15 +39,15 @@ const socials = [
 ---
 
 <Layout {...metadata}>
-  <section class="pb-10 dark:text-zinc-300">
-    <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">Tech Stack</h1>
+  <section class="pb-10 text-zinc-300">
+    <h1 class="mb-6 text-3xl md:text-4xl text-white font-semibold">Tech Stack</h1>
     <p>I love exploring new libraries and frameworks. Here is a short list of technologies that I learn and use with my side projects.</p>
-    <ul class="sm:grid flex flex-col sm:grid-cols-2 md:grid-cols-3 mt-7">
+    <ul class="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 mt-7">
       {tech.map((tech) => <Technologies logo={tech.logo} text={tech.text} />)}
     </ul>
   </section>
-  <section class="py-10 md:py-14 dark:text-zinc-300" class="dark:text-zinc-300">
-    <h1 class="mb-6 text-3xl sm:text-4xl font-bold tracking-tight dark:text-white">Get In Touch</h1>
+  <section class="py-10 md:py-14 text-zinc-300">
+    <h1 class="mb-6 text-3xl md:text-4xl text-white font-semibold">Get In Touch</h1>
     <p>If you want collab on a small project or just want say hello to me, Feel free to send an email and I will look forward to your message! By the way, here are my socials below.</p>
     {
       socials && (

@@ -2,11 +2,10 @@
 import Layout from "@layouts/Layout.astro";
 import Lance from "@images/lanceross.jpg";
 import { Picture } from "@astrojs/image/components";
-
 ---
 
 <Layout>
-  <section class="pb-10 pt-5 sm:flex sm:items-center sm:justify-between sm:flex-row-reverse">
+  <section class="pb-10 sm:flex sm:items-center sm:justify-between sm:flex-row-reverse">
     <Picture
       src={Lance}
       class="rounded-full overflow-hidden inline-flex sm:m-8"
@@ -19,18 +18,16 @@ import { Picture } from "@astrojs/image/components";
       height={160}
     />
     <header class="mt-8 max-w-lg sm:my-0">
-      <h1 class="mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-black dark:text-white">Lance Ross</h1>
-      <h2 class="mb-4 dark:text-zinc-200 text-black">Student Web Developer</h2>
-      <p class="max-w-10 leading-7 dark:text-zinc-300 text-black sm:max-w-sm md:max-w-xl">
+      <h1 class="mb-4 text-3xl sm:text-4xl font-semibold tracking-tight">Lance Ross</h1>
+      <h2 class="mb-4 text-zinc-200">Student Web Developer</h2>
+      <p class="max-w-10 text-zinc-300 sm:max-w-sm md:max-w-xl">
         Welcome to my home on the internet. I'm an aspiring web developer in the Philippines building different projects for fun with web technologies I'm currently learning.
       </p>
     </header>
   </section>
-  <section class="py-10 md:py-14">
-    <div class="mb-12 dark:text-zinc-300">
-      <h1 class="mb-6 dark:text-white text-3xl md:text-4xl tracking-tight font-bold">About Me</h1>
-      <p>I'm Lance Ross, a Frontend Web Developer from the Philippines. I enjoy building small projects using Astro and Tailwind CSS.</p><br />
-      <p>I create basic webpages when I have free time after school. When not busy with doing projects and schoolworks, I play video games like Genshin Impact.</p>
-    </div>
+  <section class="py-10 mb-10 md:py-14">
+    <h1 class="mb-6 text-3xl md:text-4xl font-semibold tracking-tight">About Me</h1>
+    <p>I'm Lance Ross, a Frontend Web Developer from the Philippines. I enjoy building small projects using Astro and Tailwind CSS.</p><br />
+    <p>I create basic webpages when I have free time after school. When not busy with doing projects and schoolworks, I play video games like Genshin Impact.</p>
   </section>
 </Layout>

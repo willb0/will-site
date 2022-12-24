@@ -1,6 +1,5 @@
 ---
 import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 import "@fontsource/inter/variable.css";
 
 export interface Props {
@@ -18,10 +17,7 @@ const defaultMeta = {
 };
 
 const { title = defaultMeta.title, description = defaultMeta.description, heroImage = defaultMeta.image, imageAlt = defaultMeta.imageAlt } = Astro.props as Props;
-const canonicalURL = new URL(Astro.url).href
-
-const classBody = "antialiased transition scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-zinc-300 dark:scrollbar-thumb-zinc-500 dark:scrollbar-track-zinc-700 dark:bg-zinc-900 dark:text-white font-sans text-lg sm:text-xl";
-
+const canonicalURL = new URL(Astro.url).href;
 ---
 
 <!DOCTYPE html>
@@ -31,7 +27,8 @@ const classBody = "antialiased transition scrollbar-thin scrollbar-thumb-zinc-40
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    <link rel="sitemap" href="/sitemap-index.xml">
+    <meta name="color-scheme" content="dark" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="title" content={title} />
     <meta name="description" content={description} />
@@ -53,31 +50,10 @@ const classBody = "antialiased transition scrollbar-thin scrollbar-thumb-zinc-40
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content="Lance Ross" />
-    <script src="@scripts/index.js"></script>
-    <script async defer data-website-id="2c6f3c52-eb1f-4895-bbdf-504224851d11" src="https://umami.lanceross.xyz/umami.js"></script>
-    <script is:inline>
-      // credits to satnaing on github
-      const primaryColorScheme = "none";
-      const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const currentTheme = localStorage.getItem("theme");
-      let theme;
-      if (currentTheme) {
-        theme = currentTheme === "dark" ? "dark" : "";
-      } else {
-        if (primaryColorScheme === "dark" || (primaryColorScheme === "none" && darkModeMediaQuery)) {
-          theme = "dark";
-        } else if (primaryColorScheme === "light") {
-          theme = "";
-        } else {
-          theme = darkModeMediaQuery ? "dark" : "";
-        }
-      }
-      document.documentElement.className = theme;
-    </script>
   </head>
-  <body class={classBody}>
-    <Header />
+  <body class="bg-zinc-900 text-white text-lg sm:text-xl">
     <main class="m-auto p-6 max-w-4xl md:p-8">
+      <Header />
       <slot />
     </main>
   </body>

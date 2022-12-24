@@ -10,10 +10,9 @@ export interface Props {
 const { name, icon, url } = Astro.props as Props;
 ---
 
-<a class="flex items-center dark:bg-zinc-800 bg-zinc-200 transition-all dark:text-white flex-col hover:ring-2 m-2 p-2 ring-zinc-300 dark:ring-zinc-700 rounded-xl text-black" href={url} target="_blank" rel="noopener noreferrer">
+<a class="flex flex-col items-center bg-zinc-800/60 hover:ring-2 transition m-2 p-2 rounded-md" href={url} target="_blank" rel="noopener noreferrer">
   <div class="flex justify-evenly items-center">
-    <Icon name={icon} class="w-6 w-6 mx-1 dark:text-white text-zinc-800" />
-    <div class="spacer"></div>
-    <p class="dark:text-zinc-300 text-zinc-800 text-lg mx-2">{name}</p>
+    <Icon name={icon} class="w-6 h-6 mx-1 text-white" />
+    <p class="text-white text-lg mx-2">{name}</p>
   </div>
 </a>
