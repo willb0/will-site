@@ -11,17 +11,9 @@ const navbar = [
 ];
 ---
 
-<header class="bg-white dark:bg-zinc-900 text-lg dark:text-zinc-300 mx-auto max-w-6xl flex flex-row justify-between transition-colors">
-  <nav class="flex items-center justify-between border-zinc-200 dark:border-zinc-700 dark:text-zinc-100 max-w-4xl mx-auto p-3 text-zinc-900 w-full">
-    <button
-      class="nav-toggle mx-3 my-5 flex items-center bg-zinc-200 dark:bg-zinc-800 h-9 hover:ring-2 justify-center ring-zinc-300 dark:ring-zinc-700 rounded-md shrink-0 touch-manipulation transition-all w-9 sm:hidden"
-      aria-label="menu toggle"
-    >
-      <Icon name="ion:menu" class="w-5 dark:text-white text-black transition-colors" />
-    </button>
-    <a href="/" class="m-5"><img src={Logo} alt="Favicon" class="flex items-center w-9 h-9" /></a>
-    {
-      (
+<header class="flex flex-row justify-between transition bg-zinc-900 text-zinc-300 text-lg mx-auto max-w-6xl">
+  {
+    (
         <ul class="flex-row hidden sm:flex">
           {navbar.map((navbar) => (
             <li>
