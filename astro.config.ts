@@ -8,14 +8,22 @@ import astroLayouts from "astro-layouts";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://lanceross.vercel.app",
+  site: "https://lanceross.xyz",
   base: "/",
+  markdown: {
+    
+    extendDefaultPlugins: true,
+    shikiConfig: {
+      theme: "vitesse-dark",
+      wrap: false,
+    },
+  },
   integrations: [
     compress({
       css: true,
       html: true,
       js: true,
-      img: true,
+      img: false,
       svg: true,
       logger: 0,
     }),
