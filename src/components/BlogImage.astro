@@ -1,0 +1,22 @@
+---
+import { Picture } from "@astrojs/image/components";
+interface Props {
+  src: string;
+  alt: string;
+  aspectRatio?: number;
+  loading?: "lazy" | "eager";
+}
+const { src, alt, aspectRatio = 16 / 9, loading = "lazy" } = Astro.props;
+---
+
+<Picture
+  widths={[1024]}
+  sizes="(max-width: 800px) 90vw, 768px"
+  aspectRatio={aspectRatio}
+  src={src}
+  loading={loading}
+  alt={alt}
+  class="rounded-lg sm:rounded-xl overflow-hidden ring ring-zinc-800/30"
+  width={768}
+  height={402}
+/>

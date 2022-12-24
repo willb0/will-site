@@ -1,0 +1,130 @@
+---
+title: Setting up my local dev environment
+description: "I will show you how to setup a local dev environment using VSCode, Terminal, WSL and more!"
+pubDate: "December 8, 2022"
+---
+
+import BlogImage from "@components/BlogImage.astro";
+import terminal from "@images/terminal.png";
+import vscode from "@images/vscode.png";
+
+It’s been many months since I started in my web development journey but still don’t have a great development environment. I just use whatever the default settings on my terminal and workspace.
+
+For today, I will show you how to setup a local dev environment using awesome tools from Microsoft like VSCode, Terminal, WSL and more!
+
+## Install WSL and Ubuntu 🐧
+
+### Step 1: Enable WSL and VMP
+
+First, you need to enable the WSL feature using the “Turn Windows Features On or Off”. To do that, head over to the Start menu and search for "Turn Windows Features On or Off." Then, select the top result from the list.
+
+A new window will open. Scroll down and check the boxes next to "Windows Subsystem for Linux" and "Virtual Machine Platform." Click Ok to continue.
+
+### Step 2: Install WSL 2 Package
+
+To install the latest version of WSL which is WSL 2, you need to install the WSL 2 kernel update. Just follow the on-screen instructions to install the package update and you’re ready to go after that.
+
+Download the latest package: [WSL 2 Kernel Update](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+
+Once you are done, launch PowerShell on your machine on administrator mode and enter the following command. This will set the default version of WSL to WSL 2.
+
+```powershell
+wsl --set-default-version 2
+```
+
+### Step 3: Pick a Linux distro you want
+
+Next, download a Linux distro you want for WSL, from either Microsoft Store or CLI. To download a distro from the Microsoft Store, simply launch the Store, search for the distro by name, and click "Get" to install it on your system.
+
+If you want to install a distro via CLI, run the following first command. You can find all list of distros for WSL by running the second command.
+
+```powershell
+# Install a distro (for example, Ubuntu)
+wsl --install -d Ubuntu
+
+# Shows a follow list of valid distros
+wsl --list --online
+```
+
+### Step 4: Create a login setup for the distro
+
+It will automagically open a new window which is your installed distro. Just like any other Linux Distros, it will ask you to create a username and password.
+
+And there you go, you have now a Linux on your Windows Machine! 🥳
+
+---
+
+## Setting up our Ubuntu WSL 🔧
+
+Before using our Linux Distro for our web development, we need to update first our applications and packages. It will take a time but at least we have the latest packages installed.
+
+To do that, you need to run these following commands:
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+### Install `zsh` and `ohmyzsh`
+
+For my local dev environment, I will install `zsh` and `ohmyzsh` so we can have a pretty cool terminal.
+
+To install `zsh`, run the following command in your Distro:
+
+```bash
+sudo apt-get install zsh -y
+```
+
+Now, to set it as your default shell every time you open your WSL, run the follow command.
+
+```bash
+chsh -s /usr/bin/zsh
+
+```
+
+After that, just type `zsh` on the command line and you can now use it! Let's go ahead and install `ohmyzsh` now.
+
+To install `ohmyzsh`, run the following command. It will install `ohmyzsh` and set a default theme for you.
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+And, there you go! You just installed a Linux Distro on your Windows Machine and also have a pretty cool terminal! 🥳
+
+---
+
+## VSCode and Terminal 👨‍💻
+
+### Step 1: Install VSCode and Terminal
+
+First, you need to install VSCode and Terminal. To do that, just head over to the Microsoft Store and search for "Visual Studio Code" and "Windows Terminal." Then, click "Get" to install it on your system.
+
+### Step 2: Install VSCode Extensions
+
+Next, you need to install some VSCode extensions to make your life easier. To do that, just open VSCode and click the Extensions icon on the left sidebar. Then, search for the following extensions and install them.
+
+**BONUS**: Here is the list of my favorite VSCode extensions:
+
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [CodeSandbox Projects](https://marketplace.visualstudio.com/items?itemName=codesandbox.codesandbox)
+- [Poimandres Theme](https://marketplace.visualstudio.com/items?itemName=pmndrs.pmndrs)
+- [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+
+### Step 3: Configure VSCode and Terminal
+
+Next, you need to configure VSCode and Terminal to make it work with your WSL. To do that, open VSCode and click the Terminal icon on the left sidebar. Then, click the "Select Default Shell" button and select "Ubuntu" from the dropdown.
+
+<BlogImage src={vscode} alt="Configuring Default Terminal VSCode" />
+
+For Windows Terminal, click the dropdown and go to settings. After that, go to "Startup" and change the default profile to "Ubuntu." and save the changes.
+
+<BlogImage src={terminal} alt="Settings for Windows Terminal" />
+
+And, there you go! You just setup a local dev environment using awesome tools from Microsoft like VSCode, Terminal, WSL and more! 🥳
+
+BONUS: You can configure your theme on Windows Terminal at the bottom of the settings. Just go to "Ubuntu" and click the "Appearance" and pick whatever theme you like on the "Color Scheme" section. You can edit the `settings.json` too if you want to bring your own theme for your Windows Terminal and you're good to go!
+
+That's it for today! This is probably one of my longest blog post ever lol. I hope you learned something new today. If you have any questions, feel free to ask me on [Twitter](https://twitter.com/lancerossdev) or [GitHub](https://github.com/lancerossdev)! I'll be happy to answer your questions! See you on the next one! 👋
