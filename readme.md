@@ -2,7 +2,7 @@
 
 My one and only website made with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-![image](https://user-images.githubusercontent.com/102563271/207018431-0f663e79-f192-4f70-b8d7-593d898f8276.png)
+![image](https://user-images.githubusercontent.com/102563271/209433603-cc17aa8b-0b1e-4174-a3dc-b9330599c756.png)
 
 ## Tech Stack 🛠️
 
