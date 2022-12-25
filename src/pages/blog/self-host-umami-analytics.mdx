@@ -37,7 +37,7 @@ Fork the [Umami Analytics](https://github.com/umami-software/umami) repository a
 
 Now, for testing locally, you need to create a `.env` file and add the following environment variables given by Supabase:
 
-```bash
+```bash title=".env" {1}
 DATABASE_URL=postgres://postgres:[YOUR-PASSWORD]@host:6543/postgres?pgbouncer=true
 HASH_SALT=anything-random-here
 ```
@@ -58,10 +58,19 @@ Now your Umami Analytics is now deployed to Vercel! 🎉
 
 ### Step 4: Add Umami to your website
 
-Now, you can add Umami to your website. First, create a website on the Umami Dashboard with the domain of your site. You can add it on the `<head>` element tag to your website by looking for the script tracking that looks something like this:
+Now, you can add Umami to your website. First, create a website on the Umami Dashboard with the domain of your site. It will tell you to add a `<script>` tag on the `<head>` element tag to your website for the script tracking that looks something like this:
 
-```html
-<script async defer data-website-id="YOUR-WEBSITE-ID" src="https://example.com/umami.js"></script>
+```html title="index.html" {1}
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Self-hosting Umami Analytics</title>
+    <script async defer data-website-id="YOUR-WEBSITE-ID" src="https://example.com/umami.js"></script>
+  </head>
+</html>
+
 ```
 
 And there you go, you now have your own Umami Analytics! This website also uses one back then, but I decided to remove it since I don't want to track my own website and my visitors anymore 😅
