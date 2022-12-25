@@ -32,4 +32,4 @@ pnpm preview
 
 ## License ⚖️
 
-This repository has [MIT License](https://github.com/lancerossdev/web/blob/main/LICENSE).
+This repository has [MIT License](https://github.com/lancerossdev/web/blob/main/license).
