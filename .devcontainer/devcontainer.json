@@ -6,5 +6,5 @@
   "features": {
     "ghcr.io/NicoVIII/devcontainer-features/pnpm:1": {}
   },
-  "postCreateCommand": "pnpm i && pnpm dev"
+  "postCreateCommand": "pnpm i"
 }
