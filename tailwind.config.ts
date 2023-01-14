@@ -17,14 +17,14 @@ module.exports = {
               content: '""',
             },
             code: {
-              fontFamily: "JetBrains Mono, monospace",
+              fontFamily: "Fira Code, monospace",
               span: {
-                fontFamily: "JetBrains Mono, monospace",
+                fontFamily: "Fira Code, monospace",
               },
             },
             "div[data-remark-code-title]": {
               backgroundColor: colors.zinc[800],
-              fontFamily: "JetBrains Mono, monospace",
+              fontFamily: "Fira Code, monospace",
               fontSize: "0.75rem",
               padding: "0.5rem 1rem",
               borderTopRightRadius: "0.25rem",
