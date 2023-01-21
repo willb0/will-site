@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lanceross.xyz/sitemap-index.xml
+User-agent: Googlebot-Image
+Disallow: /assets/
+
+Sitemap: https://lanceross.me/sitemap-index.xml

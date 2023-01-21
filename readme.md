@@ -1,4 +1,4 @@
-# [web](https://lanceross.xyz) 🚀
+# [web](https://lanceross.me) 🚀
 
 My one and only website made with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
@@ -8,9 +8,9 @@ My one and only website made with [Astro](https://astro.build/) and [Tailwind CS
 
 - Static Site Generator: [Astro](https://astro.build/)
 - CSS Framework: [Tailwind CSS](https://tailwindcss.com/)
-- App Deployment: [Vercel](https://vercel.com/)
+- App Deployment: [Cloudflare Pages](https://pages.cloudflare.com/)
 - Package Manager: [pnpm](https://pnpm.io/)
-- CI/CD: [GitHub Actions](https://github.com)
+- CI/CD: [GitHub Actions](https://github.com/)
 
 ## Developer Notes 📝
 

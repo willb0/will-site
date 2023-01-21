@@ -9,7 +9,7 @@ import codeTitle from "remark-code-title";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://lanceross.xyz",
+  site: "https://lanceross.me",
   base: "/",
   markdown: {
     extendDefaultPlugins: true,
