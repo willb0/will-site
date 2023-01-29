@@ -33,10 +33,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECTS_TOKEN }}
 
-      - name: Push changes
-        uses: EndBug/add-and-commit@v7
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
         with:
-          author_name: Lance Ross
-          author_email: 102563271+lancerossdev@users.noreply.github.com
-          message: Update projects list
-          add: "src/content/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update projects list monthly
+          title: Update projects list monthly
+          body: |
+            This PR was created by GitHub Actions! 
+            The commit hash is _${{ github.sha }}_.
+          branch: contributions-list
+          delete-branch: true

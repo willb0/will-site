@@ -1,4 +1,4 @@
-# [web](https://lanceross.me) 🚀
+# [web](https://lanceross.me/) 🚀
 
 My one and only website made with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
