@@ -1,46 +1,39 @@
-name: Projects List Monthly
+name: Deploy to GitHub Pages
 
 on:
-  schedule:
-      - cron:  '0 0 */14 * *'
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
+  
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  integrations:
-    name: Generate Contributions list
-    if: github.repository_owner == 'lancerossdev'
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code using Git
+      - name: Checkout your repository using git
         uses: actions/checkout@v3
-        
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
+      - name: Install, build, and upload your site
+        uses: withastro/action@v0
+        # with:
+            # path: . # The root location of your Astro project inside the repository. (optional)
+            # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
+            # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Run generate contribution list script
-        run: pnpm run monthly
-        env:
-          GITHUB_TOKEN: ${{ secrets.PROJECTS_TOKEN }}
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Update projects list monthly
-          title: Update projects list monthly
-          body: |
-            This PR was created by GitHub Actions! 
-            The commit hash is _${{ github.sha }}_.
-          branch: contributions-list
-          delete-branch: true
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
