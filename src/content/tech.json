@@ -1,26 +1,42 @@
 [
   {
-    "logo": "simple-icons:astro",
-    "text": "Astro"
+    "logo": "mdi:language-python",
+    "text": "Python"
   },
   {
-    "logo": "akar-icons:javascript-fill",
-    "text": "JavaScript"
+    "logo": "simple-icons:postgresql",
+    "text": "SQL(Postgres/MySQl)"
   },
   {
-    "logo": "cib:typescript",
-    "text": "TypeScript"
+    "logo": "simple-icons:docker",
+    "text": "Docker"
   },
   {
-    "logo": "simple-icons:tailwindcss",
-    "text": "Tailwind"
+    "logo": "simple-icons:fastapi",
+    "text": "FastAPI"
   },
   {
-    "logo": "simple-icons:mui",
-    "text": "Material UI"
+    "logo": "simple-icons:streamlit",
+    "text": "Streamlit"
   },
   {
-    "logo": "ion:logo-react",
-    "text": "React"
+    "logo": "mdi:aws",
+    "text": "AWS"
+  },
+  {
+    "logo": "simple-icons:pandas",
+    "text": "Pandas"
+  },
+  {
+    "logo": "simple-icons:numpy",
+    "text": "Numpy"
+  },
+  {
+    "logo": "mdi:language-java",
+    "text": "Java"
+  },
+  {
+    "logo": "simple-icons:rust",
+    "text": "Rust"
   }
 ]

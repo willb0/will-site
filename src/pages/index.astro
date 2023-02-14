@@ -1,15 +1,52 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Lance from "@images/lanceross.jpg";
+import Will from "@images/willbell.jpg";
 import { Picture } from "@astrojs/image/components";
+import Technologies from "@components/Technologies.astro";
+import tech from "@content/tech.json";
+import SocialLink from "@components/SocialLink.astro";
+
+const metadata = {
+  title: "Index - Will Bell",
+  description: "This is my index",
+};
+
+const socials = [
+  {
+    url: "https://twitter.com/senorgrubby",
+    icon: "mdi:twitter",
+    name: "Twitter",
+  },
+  {
+    url: "https://github.com/willb0",
+    icon: "mdi:github",
+    name: "GitHub",
+  },
+  {
+    url: "mailto:willbell0@icloud.com",
+    icon: "dashicons:email",
+    name: "Email",
+  },
+  {
+    url: "https://stackoverflow.com/users/14331727/willb",
+    icon: "mdi:stack-overflow",
+    name: "Stackoverflow",
+  },
+  {
+    icon: "carbon:logo-keybase",
+    name: "grubbby",
+  },
+];
 ---
 
 <Layout>
-  <section class="pb-10 sm:flex sm:items-center sm:justify-between sm:flex-row-reverse">
+  <section
+    class="pb-10 sm:flex sm:items-center sm:justify-between sm:flex-row-reverse"
+  >
     <Picture
-      src={Lance}
+      src={Will}
       class="rounded-full overflow-hidden inline-flex sm:m-8"
-      alt="Lance Ross with a Face Mask"
+      alt="Will Bell smiling"
       aspectRatio="1:1"
       widths={[320]}
       loading="eager"
@@ -18,16 +55,50 @@ import { Picture } from "@astrojs/image/components";
       height={160}
     />
     <header class="mt-8 max-w-lg sm:my-0">
-      <h1 class="mb-4 text-3xl sm:text-4xl font-semibold tracking-tight">Lance Ross</h1>
-      <h2 class="mb-4 text-zinc-200">Student Web Developer</h2>
+      <h1 class="mb-4 text-3xl sm:text-4xl font-semibold tracking-tight">
+        Will Bell
+      </h1>
       <p class="max-w-10 text-zinc-300 sm:max-w-sm md:max-w-xl">
-        Welcome to my home on the internet. I'm an aspiring web developer in the Philippines building different projects for fun with web technologies I'm currently learning.
+        Welcome to my webpage/CV/blog! I appreciate you stopping by, check out
+        my projects and hit me on twitter/email for a quick response
       </p>
     </header>
   </section>
-  <section class="py-10 mb-10 md:py-14 text-zinc-300">
-    <h1 class="mb-6 text-3xl md:text-4xl font-semibold tracking-tight text-white">About Me</h1>
-    <p>I'm Lance Ross, a Frontend Web Developer from the Philippines. I enjoy building small projects using Astro and Tailwind CSS.</p><br />
-    <p>I create basic webpages when I have free time after school. When not busy with doing projects and schoolworks, I play video games like Genshin Impact.</p>
+
+  <section
+    class="pb-10 sm:flex sm:items-center sm:justify-between sm:flex-row-reverse"
+  >
+    <p class="max-w-10 text-zinc-300">
+      I'm a Data Science/Math student at Purdue interested in large scale
+      data/ML pipelines and the infra behind it. My coursework is mostly
+      theoretical Math/CS/Statistics, so I enjoy building software/data
+      applications in my free time to explore these concepts--mostly with
+      Python. Recently, I've been learning about Topic Modeling, Rust, Go, and
+      notification systems, you can check out my progress under my Projects tab.
+      Currently looking for an internship before I graduate in December 2023
+    </p>
+  </section>
+  <section class="py-10 md:py-14 text-zinc-300">
+    <h1 class="mb-6 text-3xl md:text-4xl text-white font-semibold">
+      Get In Touch
+    </h1>
+    <p>
+      If you'd like to reach me for anything, please email me or DM on twitter!
+    </p>
+    {
+      socials && (
+        <ul class="mt-8 flex flex-wrap">
+          {socials.map((socials) => (
+            <li>
+              <SocialLink
+                name={socials.name}
+                icon={socials.icon}
+                url={socials.url}
+              />
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </section>
 </Layout>

@@ -1,54 +1,37 @@
 [
   {
-    "title": "web",
-    "description": "My personal website made with Astro.",
-    "githubUrl": "https://github.com/lancerossdev/web",
+    "title": "mercari-sniper",
+    "description": "My in-progress secondhand clothing notifications",
+    "githubUrl": "https://github.com/willb0/mercari-sniper",
     "technologies": [
-      "Astro",
-      "TypeScript"
+      "Python",
+      "FastAPI",
+      "Redis",
+      "Twilio"
     ],
-    "stargazers": 7
+    "stargazers": 0
   },
   {
-    "title": "basicblog",
-    "description": "A fully-responsive basic blog theme made with Astro.",
-    "githubUrl": "https://github.com/lancerossdev/basicblog",
+    "title": "reddit-autocategorization",
+    "description": "Machine Learning pipeline to automatically cluster Reddit posts",
+    "githubUrl": "https://snoo-frontend.up.railway.app/",
     "technologies": [
-      "Astro",
-      "TypeScript",
-      "JavaScript"
+      "Python",
+      "Rust",
+      "Streamlit",
+      "Docker"
     ],
-    "stargazers": 24
+    "stargazers": 0
   },
   {
-    "title": "nofuss",
-    "description": "An Astro Template without complicated design and setup.",
-    "githubUrl": "https://github.com/lancerossdev/nofuss",
+    "title": "r-slash-merge",
+    "description": "Aggregate videos from a subreddit into one long compilation",
+    "githubUrl": "https://github.com/willb0/r-slash-merge",
     "technologies": [
-      "Astro",
-      "TypeScript"
-    ],
-    "stargazers": 11
-  },
-  {
-    "title": "blog",
-    "description": "Discontinued microsite version of my blog page.",
-    "githubUrl": "https://github.com/lancerossdev/blog",
-    "technologies": [
-      "Astro",
-      "TypeScript",
-      "JavaScript"
-    ],
-    "stargazers": 1
-  },
-  {
-    "title": "satori",
-    "description": "Dynamic OG image generator for blogs.",
-    "githubUrl": "https://github.com/lancerossdev/satori",
-    "technologies": [
-      "TypeScript",
-      "JavaScript",
-      "CSS"
+      "Python",
+      "FFmpeg",
+      "FastAPI",
+      "docker-compose"
     ],
     "stargazers": 0
   }

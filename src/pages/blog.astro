@@ -11,7 +11,7 @@ let blogs = await Astro.glob<Frontmatter>("./blog/*.mdx");
 blogs = blogs.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
 
 const metadata = {
-  title: "Blog - Lance Ross",
+  title: "Blog - Will Bell",
   description: "This is my blog section, this is where I you can find all of my blog posts including archives.",
 };
 ---
@@ -20,7 +20,7 @@ const metadata = {
   <section>
     <h1 class="mb-6 text-3xl md:text-4xl font-semibold tracking-tight">Blog</h1>
     <p class="text-zinc-300 mb-6">
-      This is where I write about my experiences as a student web developer, and share some basic tutorials in web development. Currently, I have published {blogs.length} blog posts.
+      Here's where I'll hopefully write some interesting blog posts
     </p>
   </section>
   <section>

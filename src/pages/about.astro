@@ -5,60 +5,30 @@ import tech from "@content/tech.json";
 import SocialLink from "@components/SocialLink.astro";
 
 const metadata = {
-  title: "About - Lance Ross",
-  description: "This is my about me section, you can find more about me in this page.",
+  title: "About - Will Bell",
+  description:
+    "This is my about me section, you can find more about me in this page.",
 };
-
-const socials = [
-  {
-    url: "https://twitter.com/lancerossdev",
-    icon: "mdi:twitter",
-    name: "Twitter",
-  },
-  {
-    url: "https://github.com/lancerossdev",
-    icon: "mdi:github",
-    name: "GitHub",
-  },
-  {
-    url: "https://instagram.com/lancerossdev",
-    icon: "mdi:instagram",
-    name: "Instagram",
-  },
-  {
-    url: "mailto:lancerossdev@duck.com",
-    icon: "dashicons:email",
-    name: "Email",
-  },
-  {
-    url: "https://dev.to/lanceross",
-    icon: "fa-brands:dev",
-    name: "Dev Community",
-  },
-];
 ---
 
 <Layout {...metadata}>
   <section class="pb-10 text-zinc-300">
-    <h1 class="mb-6 text-3xl md:text-4xl text-white font-semibold">Tech Stack</h1>
-    <p>I love exploring new libraries and frameworks. Here is a short list of technologies that I learn and use with my side projects.</p>
+    <h1 class="mb-6 text-3xl md:text-4xl text-white font-semibold">About me</h1>
+    <p>
+      I grew up in San Diego, CA, and I now spend 75% of the year in West Lafayette,
+      IN. In my free time, I like cooking, snowboarding, guitar and hiking!
+    </p>
+    <br />
+    <p>
+      I enjoy exploring new langauges and libraries! Most of my formal academic
+      experience is with the PyData stack/Python, which led to building API's
+      with Flask/FastAPI. I learned Java/React.js while at Amazon last summer
+      and wrote production code, and I'm learning Rust now!
+    </p>
+    <br>
+    <h1 class="mb-6 text-l md:text-4xl text-white font-semibold">Technologies</h1>
     <ul class="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 mt-7">
       {tech.map((tech) => <Technologies logo={tech.logo} text={tech.text} />)}
     </ul>
-  </section>
-  <section class="py-10 md:py-14 text-zinc-300">
-    <h1 class="mb-6 text-3xl md:text-4xl text-white font-semibold">Get In Touch</h1>
-    <p>If you'd like to collab on a small project or just want to say hello, feel free to send me an email. You can also connect with me with my social accounts.</p>
-    {
-      socials && (
-        <ul class="mt-8 flex flex-wrap">
-          {socials.map((socials) => (
-            <li>
-              <SocialLink name={socials.name} icon={socials.icon} url={socials.url} />
-            </li>
-          ))}
-        </ul>
-      )
-    }
   </section>
 </Layout>
