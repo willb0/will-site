@@ -11,21 +11,24 @@ const metadata = {
   description: "This is my index",
 };
 
-const socials = [
+const contact = [
   {
     url: "https://twitter.com/senorgrubby",
     icon: "mdi:twitter",
     name: "Twitter",
   },
   {
-    url: "https://github.com/willb0",
-    icon: "mdi:github",
-    name: "GitHub",
-  },
-  {
     url: "mailto:willbell0@icloud.com",
     icon: "dashicons:email",
     name: "Email",
+  }
+]
+
+const socials = [
+  {
+    url: "https://github.com/willb0",
+    icon: "mdi:github",
+    name: "GitHub",
   },
   {
     url: "https://stackoverflow.com/users/14331727/willb",
@@ -67,6 +70,21 @@ const socials = [
         Welcome to my webpage/blog! I appreciate you stopping by, check out
         my projects and hit me on twitter/email for a quick response
       </p>
+      {
+        contact && (
+          <ul class="mt-8 flex flex-wrap">
+            {contact.map((contact) => (
+              <li>
+                <SocialLink
+                  name={contact.name}
+                  icon={contact.icon}
+                  url={contact.url}
+                />
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </header>
   </section>
 
@@ -84,12 +102,6 @@ const socials = [
     </p>
   </section>
   <section class="py-10 md:py-14 text-zinc-300">
-    <h1 class="mb-6 text-3xl md:text-4xl text-white font-semibold">
-      Get In Touch
-    </h1>
-    <p>
-      If you'd like to reach me for anything, please email me or DM on twitter!
-    </p>
     {
       socials && (
         <ul class="mt-8 flex flex-wrap">
