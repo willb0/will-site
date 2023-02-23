@@ -1,17 +1,5 @@
 [
   {
-    "title": "mercari-sniper",
-    "description": "My in-progress secondhand clothing notifications",
-    "githubUrl": "https://github.com/willb0/mercari-sniper",
-    "technologies": [
-      "Python",
-      "FastAPI",
-      "Redis",
-      "Twilio"
-    ],
-    "stargazers": 0
-  },
-  {
     "title": "reddit-autocategorization",
     "description": "Machine Learning pipeline to automatically cluster Reddit posts",
     "githubUrl": "https://snoo-frontend.up.railway.app/",
@@ -20,6 +8,18 @@
       "Rust",
       "Streamlit",
       "Docker"
+    ],
+    "stargazers": 0
+  },
+  {
+    "title": "mercari-sniper",
+    "description": "My in-progress secondhand clothing notifications",
+    "githubUrl": "https://github.com/willb0/mercari-sniper",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "Redis",
+      "Twilio"
     ],
     "stargazers": 0
   },
