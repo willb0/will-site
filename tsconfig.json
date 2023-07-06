@@ -1,14 +1,11 @@
 {
-  "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "types": ["@astrojs/image/client"],
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@content/*": ["src/content/*"],
-      "@images/*": ["src/images/*"]
-    }
-  }
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+    "useDefineForClassFields": false,
+		// Add type definitions for our Vite runtime.
+		"types": ["vite/client"]
+	}
 }
